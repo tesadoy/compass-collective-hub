@@ -47,7 +47,13 @@ const PortalRequests = () => {
     }
     if (!user) return;
     setSubmitting(true);
-    const { error } = await supabase.from("service_requests").insert([{ ...parsed.data, user_id: user.id }]);
+    const { error } = await supabase.from("service_requests").insert([{
+      user_id: user.id,
+      subject: parsed.data.subject,
+      message: parsed.data.message,
+      division: parsed.data.division,
+      priority: parsed.data.priority,
+    }]);
     setSubmitting(false);
     if (error) { toast({ title: "Could not submit", description: error.message, variant: "destructive" }); return; }
     toast({ title: "Request submitted", description: "Our team will respond shortly." });
