@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z
@@ -77,9 +78,18 @@ const Contact = () => {
     }
     setErrors({});
     setSubmitting(true);
-    // Backend wiring (Lovable Cloud) lands in Phase 4
-    await new Promise((r) => setTimeout(r, 600));
+    const { error } = await supabase.from("contact_submissions").insert([{
+      name: parsed.data.name,
+      email: parsed.data.email,
+      company: parsed.data.company || null,
+      division: parsed.data.division || null,
+      message: parsed.data.message,
+    }]);
     setSubmitting(false);
+    if (error) {
+      toast({ title: "Couldn't send", description: error.message, variant: "destructive" });
+      return;
+    }
     toast({
       title: "Message received",
       description: "Thanks for reaching out — we'll respond within two business days.",
