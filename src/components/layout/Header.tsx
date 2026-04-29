@@ -54,7 +54,7 @@ const Header = () => {
 
         <div className="hidden lg:flex items-center gap-2">
           <Button asChild variant="ghost" size="sm">
-            <Link to="/portal">Client Portal</Link>
+            <Link to={portalHref}>{session ? "Client Portal" : "Sign in"}</Link>
           </Button>
           <Button asChild size="sm">
             <Link to="/contact">Get in touch</Link>
@@ -94,7 +94,7 @@ const Header = () => {
             ))}
             <div className="mt-3 flex gap-2">
               <Button asChild variant="outline" size="sm" className="flex-1">
-                <Link to="/portal" onClick={() => setOpen(false)}>Client Portal</Link>
+                <Link to={portalHref} onClick={() => setOpen(false)}>{session ? "Client Portal" : "Sign in"}</Link>
               </Button>
               <Button asChild size="sm" className="flex-1">
                 <Link to="/contact" onClick={() => setOpen(false)}>Get in touch</Link>
