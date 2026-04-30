@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Compass, Handshake, Layers, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 
 const values = [
   {
@@ -51,6 +52,7 @@ const leadership = [
 const About = () => {
   return (
     <>
+      <Seo title="About TESADOY DYNAMICS" description="An integrated contracting group built on institutional rigor, long-horizon partnerships and integrated delivery across seven disciplines." path="/about" />
       <section className="bg-gradient-hero text-primary-foreground">
         <div className="container-tight py-20 sm:py-28">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import Seo from "@/components/Seo";
 
 type Article = {
   slug: string;
@@ -105,6 +106,7 @@ const Insights = () => {
 
   return (
     <div>
+      <Seo title="Insights" description="Original perspectives, project lessons and market commentary from across our seven divisions." path="/insights" />
       {/* Hero */}
       <section className="border-b border-border bg-gradient-hero text-primary-foreground">
         <div className="container-tight py-20 lg:py-28">

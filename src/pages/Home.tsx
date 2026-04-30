@@ -11,6 +11,8 @@ import {
   Truck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
+import heroImage from "@/assets/hero-construction.jpg";
 
 const divisions = [
   {
@@ -81,18 +83,42 @@ const stats = [
 const Home = () => {
   return (
     <>
+      <Seo
+        title="TESADOY DYNAMICS — Multi-Sector Contracting Group"
+        description="Integrated procurement, construction, interiors, logistics, private equity, agriculture and consulting — delivered with institutional discipline."
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "TESADOY DYNAMICS",
+          url: typeof window !== "undefined" ? window.location.origin : "",
+          logo: "/favicon.png",
+          description:
+            "Integrated contracting group across procurement, construction, interiors, logistics, private equity, agriculture and consulting.",
+          sameAs: [],
+        }}
+      />
+
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
-        <div className="absolute inset-0 opacity-20 [background:radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_45%),radial-gradient(circle_at_80%_70%,hsl(var(--primary-glow))_0%,transparent_50%)]" />
+      <section className="relative overflow-hidden bg-primary text-primary-foreground">
+        <img
+          src={heroImage}
+          alt="Modern construction site at dusk with steel framework and logistics operations"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/80 to-primary/60" />
+        <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_45%),radial-gradient(circle_at_80%_70%,hsl(var(--primary-glow))_0%,transparent_50%)]" />
         <div className="container-tight relative py-24 sm:py-32 lg:py-40">
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white/80">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white/80 backdrop-blur">
             Multi-sector contracting group
           </p>
           <h1 className="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
             Building, sourcing and capitalizing the
             <span className="text-white/70"> infrastructure of ambitious organizations.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-white/75">
+          <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-white/80">
             TESADOY DYNAMICS is an integrated contracting group operating across procurement,
             development, interiors, logistics, private equity, agriculture and advisory —
             delivered with institutional discipline.
