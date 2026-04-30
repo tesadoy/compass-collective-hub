@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -23,13 +24,9 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="container-tight flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-gradient-accent text-primary-foreground font-display font-bold">
-            T
-          </span>
-          <span className="font-display text-base font-semibold tracking-tight text-foreground">
-            TESADOY <span className="text-muted-foreground font-medium">DYNAMICS</span>
-          </span>
+        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)} aria-label="TESADOY DYNAMICS home">
+          <img src={logo} alt="TESADOY DYNAMICS" className="h-10 w-auto" />
+          <span className="sr-only">TESADOY DYNAMICS</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

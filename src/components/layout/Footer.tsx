@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const footerSections = [
   {
@@ -41,13 +42,8 @@ const Footer = () => {
       <div className="container-tight py-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Link to="/" className="flex items-center gap-2">
-              <span className="grid h-9 w-9 place-items-center rounded-md bg-gradient-accent text-primary-foreground font-display font-bold">
-                T
-              </span>
-              <span className="font-display text-base font-semibold tracking-tight">
-                TESADOY <span className="text-muted-foreground font-medium">DYNAMICS</span>
-              </span>
+            <Link to="/" className="inline-flex items-center" aria-label="TESADOY DYNAMICS home">
+              <img src={logo} alt="TESADOY DYNAMICS" className="h-12 w-auto" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               An integrated contracting group delivering procurement, construction, logistics,
