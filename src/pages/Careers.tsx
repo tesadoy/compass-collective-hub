@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, Globe2, GraduationCap, HeartHandshake, MapPin, Sparkles, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Seo from "@/components/Seo";
 
 type Opening = {
   title: string;
@@ -44,17 +45,14 @@ const benefits = [
 const Careers = () => {
   const [activeDivision, setActiveDivision] = useState<string>("All");
 
-  useEffect(() => {
-    document.title = "Careers | TESADOY DYNAMICS";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Build a career at TESADOY DYNAMICS. Open roles across construction, procurement, logistics, agriculture, design, consulting and private equity.");
-  }, []);
+
 
   const divisions = ["All", ...Array.from(new Set(openings.map((o) => o.division)))];
   const filtered = activeDivision === "All" ? openings : openings.filter((o) => o.division === activeDivision);
 
   return (
     <div>
+      <Seo title="Careers" description="Build a career at TESADOY DYNAMICS. Open roles across construction, procurement, logistics, agriculture, design, consulting and private equity." path="/careers" />
       {/* Hero */}
       <section className="border-b border-border bg-gradient-hero text-primary-foreground">
         <div className="container-tight py-20 lg:py-28">
