@@ -10,6 +10,7 @@ import {
   Truck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 
 const divisions = [
   {
@@ -115,6 +116,7 @@ const divisions = [
 const Divisions = () => {
   return (
     <>
+      <Seo title="Our Divisions" description="Seven operating divisions: procurement, construction, interiors, logistics, private equity, agriculture and consulting." path="/divisions" />
       <section className="bg-gradient-hero text-primary-foreground">
         <div className="container-tight py-20 sm:py-28">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">

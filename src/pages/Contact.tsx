@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import Seo from "@/components/Seo";
 
 const contactSchema = z.object({
   name: z
@@ -99,6 +100,7 @@ const Contact = () => {
 
   return (
     <>
+      <Seo title="Contact TESADOY DYNAMICS" description="Get in touch to scope a project, request a proposal or partner with our team across construction, procurement, logistics, agriculture and advisory." path="/contact" />
       <section className="bg-gradient-hero text-primary-foreground">
         <div className="container-tight py-20 sm:py-28">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Seo from "@/components/Seo";
 
 type Project = {
   title: string;
@@ -100,6 +101,7 @@ const Projects = () => {
 
   return (
     <>
+      <Seo title="Selected Projects" description="A selection of TESADOY DYNAMICS projects across construction, interiors, logistics, agriculture and private equity." path="/projects" />
       <section className="bg-gradient-hero text-primary-foreground">
         <div className="container-tight py-20 sm:py-28">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
