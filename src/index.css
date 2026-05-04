@@ -141,6 +141,42 @@
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
+  /* Reveal-on-load animations */
+  .animate-fade-up {
+    animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .animate-fade-in-slow {
+    animation: fade-in-slow 1.2s ease-out both;
+  }
+  .animate-kenburns {
+    animation: kenburns 18s ease-out both;
+  }
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-500 { animation-delay: 0.5s; }
+
+  @keyframes fade-up {
+    0%   { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in-slow {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes kenburns {
+    0%   { transform: scale(1.05) translate3d(0, 0, 0); }
+    100% { transform: scale(1.15) translate3d(-1.5%, -1%, 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-up,
+    .animate-fade-in-slow,
+    .animate-kenburns {
+      animation: none !important;
+    }
+  }
+
   .bg-gradient-hero {
     background: var(--gradient-hero);
   }
