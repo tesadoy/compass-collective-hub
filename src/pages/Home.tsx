@@ -101,30 +101,36 @@ const Home = () => {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        <img
-          src={heroImage}
-          alt="Modern construction site at dusk with steel framework and logistics operations"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={heroImage}
+            alt="Modern construction site at dusk with steel framework and logistics operations"
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+            className="h-full w-full object-cover opacity-40 animate-kenburns"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/80 to-primary/60" />
         <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_45%),radial-gradient(circle_at_80%_70%,hsl(var(--primary-glow))_0%,transparent_50%)]" />
+        {/* Subtle grid texture */}
+        <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(hsl(var(--primary-foreground))_1px,transparent_1px),linear-gradient(90deg,hsl(var(--primary-foreground))_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="container-tight relative py-24 sm:py-32 lg:py-40">
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white/80 backdrop-blur">
+          <p className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white/80 backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
             Multi-sector contracting group
           </p>
-          <h1 className="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="animate-fade-up delay-100 mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
             Building, sourcing and capitalizing the
             <span className="text-white/70"> infrastructure of ambitious organizations.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-white/80">
+          <p className="animate-fade-up delay-200 mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-white/80">
             TESADOY DYNAMICS is an integrated contracting group operating across procurement,
             development, interiors, logistics, private equity, agriculture and advisory —
             delivered with institutional discipline.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-3">
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
+          <div className="animate-fade-up delay-300 mt-10 flex flex-col sm:flex-row gap-3">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 hover-scale">
               <Link to="/divisions">
                 Explore our divisions <ArrowRight className="h-4 w-4" />
               </Link>
@@ -139,6 +145,8 @@ const Home = () => {
             </Button>
           </div>
         </div>
+        {/* Bottom fade */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
       </section>
 
       {/* Stats */}

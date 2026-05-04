@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Compass, Handshake, Layers, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
+import aboutHero from "@/assets/about-hero.jpg";
 
 const values = [
   {
@@ -53,15 +54,23 @@ const About = () => {
   return (
     <>
       <Seo title="About TESADOY DYNAMICS" description="An integrated contracting group built on institutional rigor, long-horizon partnerships and integrated delivery across seven disciplines." path="/about" />
-      <section className="bg-gradient-hero text-primary-foreground">
-        <div className="container-tight py-20 sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+      <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
+        <img
+          src={aboutHero}
+          alt="Modern corporate boardroom overlooking a city skyline at golden hour"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-primary/55" />
+        <div className="container-tight relative py-20 sm:py-28">
+          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
             About TESADOY DYNAMICS
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="animate-fade-up delay-100 mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             An integrated contracting group built for ambitious mandates.
           </h1>
-          <p className="mt-6 max-w-2xl text-white/75 text-lg leading-relaxed">
+          <p className="animate-fade-up delay-200 mt-6 max-w-2xl text-white/80 text-lg leading-relaxed">
             We bring together procurement, development, interiors, logistics, capital, agriculture
             and advisory under one operating standard — so our clients can move faster, with less
             risk, on the projects that matter most.
