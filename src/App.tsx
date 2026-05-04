@@ -14,6 +14,8 @@ import Projects from "./pages/Projects.tsx";
 import Contact from "./pages/Contact.tsx";
 import Insights from "./pages/Insights.tsx";
 import Careers from "./pages/Careers.tsx";
+import Privacy from "./pages/legal/Privacy.tsx";
+import Terms from "./pages/legal/Terms.tsx";
 import Auth from "./pages/Auth.tsx";
 import PortalProjects from "./pages/portal/PortalProjects.tsx";
 import PortalDocuments from "./pages/portal/PortalDocuments.tsx";
@@ -43,6 +45,8 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/insights" element={<Insights />} />
               <Route path="/careers" element={<Careers />} />
+              <Route path="/legal/privacy" element={<Privacy />} />
+              <Route path="/legal/terms" element={<Terms />} />
             </Route>
             <Route path="/auth" element={<Auth />} />
             <Route path="/portal" element={<PortalLayout />}>
