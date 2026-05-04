@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
+import divisionsHero from "@/assets/divisions-hero.jpg";
 
 const divisions = [
   {
@@ -117,15 +118,23 @@ const Divisions = () => {
   return (
     <>
       <Seo title="Our Divisions" description="Seven operating divisions: procurement, construction, interiors, logistics, private equity, agriculture and consulting." path="/divisions" />
-      <section className="bg-gradient-hero text-primary-foreground">
-        <div className="container-tight py-20 sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+      <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
+        <img
+          src={divisionsHero}
+          alt="Aerial view of a commercial development site at dusk"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-primary/50" />
+        <div className="container-tight relative py-20 sm:py-28">
+          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
             Our divisions
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="animate-fade-up delay-100 mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             Seven service lines, one operating standard.
           </h1>
-          <p className="mt-6 max-w-2xl text-white/75 text-lg leading-relaxed">
+          <p className="animate-fade-up delay-200 mt-6 max-w-2xl text-white/80 text-lg leading-relaxed">
             Engage a single division or commission integrated end-to-end delivery — every line
             of business operates to the same governance, quality and reporting standard.
           </p>
