@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { Button } from "@/components/ui/button";
 
 const footerSections = [
   {
@@ -86,7 +87,20 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-border pt-6">
+        <div className="mt-12 flex justify-center border-t border-border pt-6">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="gap-2"
+            aria-label="Back to top"
+          >
+            <ArrowUp className="h-4 w-4" />
+            Back to top
+          </Button>
+        </div>
+
+        <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} TESADOY DYNAMICS. All rights reserved.
           </p>
