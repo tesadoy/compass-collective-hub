@@ -95,7 +95,7 @@ const Footer = () => {
           <ArrowUp className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5" strokeWidth={2.5} />
         </button>
 
-        <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-border pt-6">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} TESADOY DYNAMICS. All rights reserved.
           </p>
