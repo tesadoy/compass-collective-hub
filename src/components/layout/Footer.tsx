@@ -99,7 +99,7 @@ const Footer = () => {
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} TESADOY DYNAMICS. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs italic text-foreground">
             Crafting excellence in every project.
           </p>
         </div>
