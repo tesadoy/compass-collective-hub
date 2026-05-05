@@ -87,18 +87,13 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center border-t border-border pt-6">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="gap-2"
-            aria-label="Back to top"
-          >
-            <ArrowUp className="h-4 w-4" />
-            Back to top
-          </Button>
-        </div>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+          className="fixed bottom-8 right-6 z-50 group flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 ring-1 ring-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1"
+        >
+          <ArrowUp className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5" strokeWidth={2.5} />
+        </button>
 
         <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
