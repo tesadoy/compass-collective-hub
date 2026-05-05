@@ -96,10 +96,10 @@ const Footer = () => {
         </button>
 
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-border pt-6 pr-0 sm:pr-20">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} TESADOY DYNAMICS. All rights reserved.
           </p>
-          <p className="text-xs italic text-foreground">
+          <p className="text-sm italic text-foreground">
             Crafting excellence in every project.
           </p>
         </div>
