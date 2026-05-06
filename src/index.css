@@ -3,70 +3,71 @@
 @tailwind utilities;
 
 /*
-  TESADOY DYNAMICS — Navy Trust design system.
+  TESADOY DYNAMICS — Ocean Deep design system.
   All colors MUST be HSL. Define everything as semantic tokens.
 */
 
 @layer base {
   :root {
-    /* Brand palette — Navy Trust */
-    --background: 210 40% 99%;
-    --foreground: 220 55% 10%;
+    /* Brand palette — Ocean Deep */
+    --background: 200 30% 98%;
+    --foreground: 212 70% 12%;
 
-    --surface: 220 30% 97%;
-    --surface-foreground: 220 55% 10%;
+    --surface: 195 30% 95%;
+    --surface-foreground: 212 70% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 55% 10%;
+    --card-foreground: 212 70% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 55% 10%;
+    --popover-foreground: 212 70% 12%;
 
-    /* Deep institutional navy */
-    --primary: 222 65% 14%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 218 60% 28%;
+    /* Deep ocean navy */
+    --primary: 212 70% 15%;
+    --primary-foreground: 195 40% 97%;
+    --primary-glow: 203 60% 27%;
 
-    /* Mid navy / accent blue */
-    --secondary: 215 45% 24%;
-    --secondary-foreground: 210 40% 98%;
+    /* Mid teal-blue */
+    --secondary: 203 60% 27%;
+    --secondary-foreground: 195 40% 97%;
 
-    --muted: 215 25% 94%;
-    --muted-foreground: 215 18% 38%;
+    --muted: 195 25% 92%;
+    --muted-foreground: 203 25% 35%;
 
-    --accent: 212 55% 38%;
-    --accent-foreground: 210 40% 98%;
+    /* Bright teal accent */
+    --accent: 190 55% 40%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 75% 45%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 195 40% 97%;
 
-    --border: 215 25% 88%;
-    --input: 215 25% 88%;
-    --ring: 215 45% 24%;
+    --border: 200 25% 86%;
+    --input: 200 25% 86%;
+    --ring: 190 55% 40%;
 
     --radius: 0.5rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(222 65% 12%) 0%, hsl(215 50% 20%) 55%, hsl(212 55% 30%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(220 30% 99%) 0%, hsl(215 25% 94%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(212 55% 38%), hsl(218 60% 28%));
+    --gradient-hero: linear-gradient(135deg, hsl(212 70% 12%) 0%, hsl(203 60% 27%) 55%, hsl(187 56% 40%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(200 30% 98%) 0%, hsl(195 25% 92%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(187 56% 40%), hsl(176 42% 55%));
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(222 65% 14% / 0.06);
-    --shadow-md: 0 8px 24px -8px hsl(222 65% 14% / 0.18);
-    --shadow-elegant: 0 24px 60px -20px hsl(222 65% 14% / 0.35);
+    --shadow-sm: 0 1px 2px 0 hsl(212 70% 12% / 0.06);
+    --shadow-md: 0 8px 24px -8px hsl(212 70% 12% / 0.2);
+    --shadow-elegant: 0 24px 60px -20px hsl(212 70% 12% / 0.38);
 
     /* Motion */
     --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 220 30% 97%;
-    --sidebar-foreground: 220 55% 10%;
-    --sidebar-primary: 222 65% 14%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 215 25% 94%;
-    --sidebar-accent-foreground: 222 65% 14%;
-    --sidebar-border: 215 25% 88%;
-    --sidebar-ring: 215 45% 24%;
+    --sidebar-background: 195 30% 95%;
+    --sidebar-foreground: 212 70% 12%;
+    --sidebar-primary: 212 70% 15%;
+    --sidebar-primary-foreground: 195 40% 97%;
+    --sidebar-accent: 195 25% 92%;
+    --sidebar-accent-foreground: 212 70% 15%;
+    --sidebar-border: 200 25% 86%;
+    --sidebar-ring: 190 55% 40%;
   }
 
   .dark {
