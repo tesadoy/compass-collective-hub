@@ -3,71 +3,70 @@
 @tailwind utilities;
 
 /*
-  TESADOY DYNAMICS — Charcoal & Ember design system.
+  TESADOY DYNAMICS — Navy Trust design system.
   All colors MUST be HSL. Define everything as semantic tokens.
 */
 
 @layer base {
   :root {
-    /* Brand palette — Charcoal & Ember */
-    --background: 30 10% 98%;
-    --foreground: 0 0% 10%;
+    /* Brand palette — Navy Trust */
+    --background: 210 40% 99%;
+    --foreground: 220 55% 10%;
 
-    --surface: 30 8% 96%;
-    --surface-foreground: 0 0% 10%;
+    --surface: 220 30% 97%;
+    --surface-foreground: 220 55% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 220 55% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 220 55% 10%;
 
-    /* Deep charcoal */
-    --primary: 0 0% 10%;
-    --primary-foreground: 30 15% 97%;
-    --primary-glow: 0 0% 29%;
+    /* Deep institutional navy */
+    --primary: 222 65% 14%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 218 60% 28%;
 
-    /* Mid charcoal */
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 30 15% 97%;
+    /* Mid navy / accent blue */
+    --secondary: 215 45% 24%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 30 8% 93%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 215 25% 94%;
+    --muted-foreground: 215 18% 38%;
 
-    /* Warm ember accent */
-    --accent: 14 78% 57%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 212 55% 38%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 75% 45%;
-    --destructive-foreground: 30 15% 97%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 30 8% 88%;
-    --input: 30 8% 88%;
-    --ring: 14 78% 57%;
+    --border: 215 25% 88%;
+    --input: 215 25% 88%;
+    --ring: 215 45% 24%;
 
     --radius: 0.5rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(0 0% 18%) 55%, hsl(0 0% 29%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(30 10% 98%) 0%, hsl(30 8% 93%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(14 78% 57%), hsl(18 80% 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(222 65% 12%) 0%, hsl(215 50% 20%) 55%, hsl(212 55% 30%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(220 30% 99%) 0%, hsl(215 25% 94%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(212 55% 38%), hsl(218 60% 28%));
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 10% / 0.06);
-    --shadow-md: 0 8px 24px -8px hsl(0 0% 10% / 0.22);
-    --shadow-elegant: 0 24px 60px -20px hsl(0 0% 10% / 0.4);
+    --shadow-sm: 0 1px 2px 0 hsl(222 65% 14% / 0.06);
+    --shadow-md: 0 8px 24px -8px hsl(222 65% 14% / 0.18);
+    --shadow-elegant: 0 24px 60px -20px hsl(222 65% 14% / 0.35);
 
     /* Motion */
     --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 30 8% 96%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 30 15% 97%;
-    --sidebar-accent: 30 8% 93%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 30 8% 88%;
-    --sidebar-ring: 14 78% 57%;
+    --sidebar-background: 220 30% 97%;
+    --sidebar-foreground: 220 55% 10%;
+    --sidebar-primary: 222 65% 14%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 215 25% 94%;
+    --sidebar-accent-foreground: 222 65% 14%;
+    --sidebar-border: 215 25% 88%;
+    --sidebar-ring: 215 45% 24%;
   }
 
   .dark {
