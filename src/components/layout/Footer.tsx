@@ -88,7 +88,20 @@ const Footer = () => {
         </div>
 
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => {
+            const start = window.scrollY;
+            const duration = Math.min(1200, Math.max(500, start * 0.6));
+            const startTime = performance.now();
+            const easeInOutCubic = (t: number) =>
+              t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            const step = (now: number) => {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              window.scrollTo(0, start * (1 - easeInOutCubic(progress)));
+              if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+          }}
           aria-label="Back to top"
           className="fixed bottom-8 right-6 z-50 group flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 ring-1 ring-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1"
         >
