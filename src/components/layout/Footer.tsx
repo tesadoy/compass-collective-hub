@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
@@ -92,7 +92,13 @@ const Footer = () => {
           aria-label="Back to top"
           className="fixed bottom-8 right-6 z-50 group flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 ring-1 ring-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1"
         >
-          <ArrowUp className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5" strokeWidth={2.5} />
+          <svg
+            viewBox="0 0 24 24"
+            className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5"
+            aria-hidden="true"
+          >
+            <polygon points="12,5 21,19 3,19" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+          </svg>
         </button>
 
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-border pt-6 pr-0 sm:pr-20">
