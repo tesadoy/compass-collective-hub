@@ -107,10 +107,17 @@ const Footer = () => {
         >
           <svg
             viewBox="0 0 24 24"
-            className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5"
+            className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5"
             aria-hidden="true"
           >
-            <polygon points="12,5 21,19 3,19" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+            <path
+              d="M12 5 L20.5 18 Q21 19 19.5 19 L4.5 19 Q3 19 3.5 18 Z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+            />
           </svg>
         </button>
 
