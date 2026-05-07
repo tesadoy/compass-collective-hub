@@ -29,7 +29,7 @@ const Header = () => {
           <span className="sr-only">TESADOY DYNAMICS</span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
@@ -49,7 +49,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <Button asChild variant="ghost" size="sm">
             <Link to={portalHref}>{session ? "Client Portal" : "Sign in"}</Link>
           </Button>
@@ -61,7 +61,7 @@ const Header = () => {
         <button
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground hover:bg-muted"
+          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground hover:bg-muted"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -69,7 +69,7 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="md:hidden border-t border-border bg-background">
           <div className="container-tight py-4 flex flex-col gap-1">
             {navItems.map((item) => (
               <NavLink
