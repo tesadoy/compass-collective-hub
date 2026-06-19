@@ -25,7 +25,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="container-tight flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)} aria-label="TESADOY DYNAMICS home">
-          <img src={logo} alt="TESADOY DYNAMICS" className="h-10 w-auto" />
+          <img src={logo} alt="TESADOY DYNAMICS" className="h-14 w-auto" />
           <span className="sr-only">TESADOY DYNAMICS</span>
         </Link>
 
