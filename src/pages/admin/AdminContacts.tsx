@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
 interface Sub {
-  id: string; name: string; email: string; company: string | null;
+  id: string; name: string; email: string; company: string | null; phone: string | null;
   division: string | null; message: string; status: string; created_at: string;
 }
 
