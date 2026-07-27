@@ -35,7 +35,7 @@ const AdminContacts = () => {
               <div>
                 <h3 className="font-display font-semibold">{s.name} <span className="font-normal text-muted-foreground">· {s.email}</span></h3>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  {s.company && <>{s.company} · </>}{s.division && <>{s.division} · </>}{new Date(s.created_at).toLocaleString()}
+                  {s.company && <>{s.company} · </>}{s.phone && <>{s.phone} · </>}{s.division && <>{s.division} · </>}{new Date(s.created_at).toLocaleString()}
                 </p>
               </div>
               <Badge variant={s.status === "new" ? "default" : "secondary"}>{s.status}</Badge>
