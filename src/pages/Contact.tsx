@@ -83,6 +83,7 @@ const Contact = () => {
       name: parsed.data.name,
       email: parsed.data.email,
       company: parsed.data.company || null,
+      phone: parsed.data.phone || null,
       division: parsed.data.division || null,
       message: parsed.data.message,
     }]);
