@@ -12,6 +12,13 @@ import {
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import divisionsHero from "@/assets/divisions-hero.jpg";
+import imgProcurement from "@/assets/div-procurement.jpg";
+import imgConstruction from "@/assets/div-construction.jpg";
+import imgInteriors from "@/assets/div-interiors.jpg";
+import imgLogistics from "@/assets/div-logistics.jpg";
+import imgEquity from "@/assets/div-equity.jpg";
+import imgAgriculture from "@/assets/div-agriculture.jpg";
+import imgConsulting from "@/assets/div-consulting.jpg";
 
 const divisions = [
   {
