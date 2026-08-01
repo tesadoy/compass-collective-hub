@@ -23,6 +23,8 @@ import imgConsulting from "@/assets/div-consulting.jpg";
 const divisions = [
   {
     id: "procurement",
+    image: imgProcurement,
+    alt: "Warehouse team managing procurement inventory",
     icon: Building2,
     title: "Procurement & Supply",
     summary:
@@ -37,6 +39,8 @@ const divisions = [
   },
   {
     id: "construction",
+    image: imgConstruction,
+    alt: "Commercial construction site with tower crane at dusk",
     icon: Hammer,
     title: "Development & Construction",
     summary:
@@ -51,6 +55,8 @@ const divisions = [
   },
   {
     id: "interiors",
+    image: imgInteriors,
+    alt: "Luxury modern office interior fit-out",
     icon: PaintRoller,
     title: "Interior Design & Finishing",
     summary:
@@ -65,6 +71,8 @@ const divisions = [
   },
   {
     id: "logistics",
+    image: imgLogistics,
+    alt: "Freight terminal with containers and cargo trucks",
     icon: Truck,
     title: "Logistics",
     summary:
@@ -79,6 +87,8 @@ const divisions = [
   },
   {
     id: "equity",
+    image: imgEquity,
+    alt: "Boardroom overlooking a city skyline at dusk",
     icon: LineChart,
     title: "Private Equity",
     summary:
@@ -93,6 +103,8 @@ const divisions = [
   },
   {
     id: "agriculture",
+    image: imgAgriculture,
+    alt: "Aerial view of commercial farmland and processing facility",
     icon: Sprout,
     title: "Farms & Agro-processing",
     summary:
@@ -107,6 +119,8 @@ const divisions = [
   },
   {
     id: "consulting",
+    image: imgConsulting,
+    alt: "Consultants reviewing documents in a modern office",
     icon: Leaf,
     title: "Consulting Services",
     summary:
@@ -164,7 +178,7 @@ const Divisions = () => {
       </section>
 
       <div className="container-tight py-20 sm:py-24 space-y-20">
-        {divisions.map(({ id, icon: Icon, title, summary, services }, idx) => (
+        {divisions.map(({ id, icon: Icon, title, summary, services, image, alt }, idx) => (
           <section key={id} id={id} className="scroll-mt-24">
             <div className="grid gap-10 lg:grid-cols-12">
               <div className="lg:col-span-5">
@@ -184,7 +198,17 @@ const Divisions = () => {
                   </Link>
                 </Button>
               </div>
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-7 space-y-6">
+                <div className="overflow-hidden rounded-xl border border-border shadow-sm">
+                  <img
+                    src={image}
+                    alt={alt}
+                    width={1200}
+                    height={800}
+                    loading="lazy"
+                    className="h-56 w-full object-cover sm:h-72 transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
                 <div className="rounded-xl border border-border bg-card p-8 shadow-sm">
                   <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                     Capabilities
