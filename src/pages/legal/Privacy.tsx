@@ -50,13 +50,13 @@ const Privacy = () => (
         <h2 className="font-display text-xl font-semibold mt-8">6. Your Rights</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           You may request access, correction or deletion of your data, or withdraw consent, by
-          emailing <a href="mailto:hello@tesadoy.com" className="underline">hello@tesadoy.com</a>.
+          emailing <a href="mailto:Contact@tesadoy.com" className="underline">Contact@tesadoy.com</a>.
         </p>
 
         <h2 className="font-display text-xl font-semibold mt-8">7. Contact</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           Questions about this policy? Reach us at{" "}
-          <a href="mailto:hello@tesadoy.com" className="underline">hello@tesadoy.com</a>.
+          <a href="mailto:Contact@tesadoy.com" className="underline">Contact@tesadoy.com</a>.
         </p>
       </div>
     </div>

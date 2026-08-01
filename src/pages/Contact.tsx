@@ -125,17 +125,17 @@ const Contact = () => {
               <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-3">
                   <MapPin className="h-4 w-4 mt-0.5 text-primary" />
-                  <span>Headquarters address — to be provided</span>
+                  <span>Gwagwalada, FCT-Abuja, Nigeria</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-primary" />
-                  <a href="mailto:hello@tesadoy.com" className="hover:text-foreground">
-                    hello@tesadoy.com
+                  <a href="mailto:Contact@tesadoy.com" className="hover:text-foreground">
+                    Contact@tesadoy.com
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-primary" />
-                  <span>+000 000 0000</span>
+                  <span>+234-811-463-6222</span>
                 </li>
               </ul>
             </div>
@@ -150,8 +150,8 @@ const Contact = () => {
               <h3 className="font-display text-base font-semibold">Press & investors</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 For media, partnership or investment enquiries, please email{" "}
-                <a href="mailto:partnerships@tesadoy.com" className="text-foreground underline">
-                  partnerships@tesadoy.com
+                <a href="mailto:Contact@tesadoy.com" className="text-foreground underline">
+                  Contact@tesadoy.com
                 </a>
                 .
               </p>
