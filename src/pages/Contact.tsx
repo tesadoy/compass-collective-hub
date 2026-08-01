@@ -142,8 +142,8 @@ const Contact = () => {
             <div className="rounded-xl border border-border bg-surface p-6">
               <h3 className="font-display text-base font-semibold">Working hours</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Monday – Friday · 08:30 – 18:00<br />
-                Saturday · 09:00 – 13:00
+                Monday – Friday · 09:00 – 17:00<br />
+                Saturday · 10:00 – 15:00
               </p>
             </div>
             <div className="rounded-xl border border-border bg-surface p-6">
