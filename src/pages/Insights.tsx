@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import Seo from "@/components/Seo";
+import insConstruction from "@/assets/ins-construction.jpg";
+import insAgriculture from "@/assets/ins-agriculture.jpg";
+import insLogistics from "@/assets/ins-logistics.jpg";
+import insDesign from "@/assets/ins-design.jpg";
+import insConsulting from "@/assets/ins-consulting.jpg";
+import insEquity from "@/assets/ins-equity.jpg";
 
 type Article = {
   slug: string;
@@ -15,6 +21,7 @@ type Article = {
   date: string;
   readTime: string;
   author: string;
+  image: string;
 };
 
 const articles: Article[] = [
@@ -27,6 +34,7 @@ const articles: Article[] = [
     date: "Apr 18, 2026",
     readTime: "6 min read",
     author: "TESADOY Editorial",
+    image: insConstruction,
   },
   {
     slug: "agro-processing-frontier",
@@ -37,6 +45,7 @@ const articles: Article[] = [
     date: "Apr 02, 2026",
     readTime: "8 min read",
     author: "Private Equity Desk",
+    image: insAgriculture,
   },
   {
     slug: "logistics-discipline",
@@ -47,6 +56,7 @@ const articles: Article[] = [
     date: "Mar 21, 2026",
     readTime: "5 min read",
     author: "Operations Team",
+    image: insLogistics,
   },
   {
     slug: "interiors-that-perform",
@@ -57,6 +67,7 @@ const articles: Article[] = [
     date: "Mar 09, 2026",
     readTime: "7 min read",
     author: "Interior Studio",
+    image: insDesign,
   },
   {
     slug: "consulting-with-skin-in-the-game",
@@ -67,6 +78,7 @@ const articles: Article[] = [
     date: "Feb 24, 2026",
     readTime: "4 min read",
     author: "Advisory Practice",
+    image: insConsulting,
   },
   {
     slug: "responsible-private-equity",
@@ -77,6 +89,7 @@ const articles: Article[] = [
     date: "Feb 10, 2026",
     readTime: "9 min read",
     author: "Investment Committee",
+    image: insEquity,
   },
 ];
 
@@ -127,7 +140,7 @@ const Insights = () => {
         <Link to={`/insights/${featured.slug}`} className="group block">
           <Card className="overflow-hidden border-border/70 transition-all hover:shadow-elegant">
             <div className="grid lg:grid-cols-2">
-              <div className="aspect-[16/10] lg:aspect-auto bg-gradient-accent" />
+              <img src={featured.image} alt={featured.title} loading="lazy" width={1024} height={640} className="aspect-[16/10] lg:aspect-auto lg:h-full w-full object-cover" />
               <CardContent className="flex flex-col justify-center p-8 lg:p-12">
                 <Badge variant="outline" className="self-start mb-4">Featured · {featured.category}</Badge>
                 <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">
@@ -188,7 +201,7 @@ const Insights = () => {
             {filtered.map((article) => (
               <Link key={article.slug} to={`/insights/${article.slug}`} className="group">
                 <Card className="h-full border-border/70 transition-all hover:shadow-elegant hover:-translate-y-0.5">
-                  <div className="aspect-[16/10] bg-gradient-to-br from-secondary to-muted rounded-t-lg" />
+                  <img src={article.image} alt={article.title} loading="lazy" width={1024} height={640} className="aspect-[16/10] w-full object-cover rounded-t-lg" />
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
                       <Badge variant="outline" className="text-xs">{article.category}</Badge>
