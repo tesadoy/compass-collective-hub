@@ -3,6 +3,7 @@ import { ArrowRight, Compass, Handshake, Layers, ShieldCheck, Sparkles, Users } 
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import aboutHero from "@/assets/about-hero.jpg";
+import tesleemOyedele from "@/assets/tesleem-oyedele.png.asset.json";
 
 const values = [
   {
@@ -44,7 +45,7 @@ const values = [
 ];
 
 const leadership = [
-  { name: "Leadership member", role: "Group Chairperson" },
+  { name: "Tesleem Oyedele", role: "Group Chairperson", image: tesleemOyedele.url },
   { name: "Leadership member", role: "Chief Executive Officer" },
   { name: "Leadership member", role: "Chief Operating Officer" },
   { name: "Leadership member", role: "Chief Financial Officer" },
