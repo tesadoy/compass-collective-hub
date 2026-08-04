@@ -31,6 +31,7 @@ const projects: Project[] = [
     year: "2024",
     description:
       "Ground-up development of a flagship commercial complex including retail, office and parking.",
+    image: imgMixedUse,
   },
   {
     title: "Corporate HQ Fit-out",
@@ -39,6 +40,7 @@ const projects: Project[] = [
     year: "2024",
     description:
       "Turnkey design and fit-out of a multi-floor corporate headquarters with bespoke joinery.",
+    image: imgHqFitout,
   },
   {
     title: "Institutional Procurement Programme",
@@ -47,6 +49,7 @@ const projects: Project[] = [
     year: "2023",
     description:
       "Multi-category sourcing programme covering equipment, consumables and specialist services.",
+    image: imgProcurement,
   },
   {
     title: "Regional Distribution Network",
@@ -55,6 +58,7 @@ const projects: Project[] = [
     year: "2023",
     description:
       "Cross-border freight, customs and last-mile distribution for a manufacturing client.",
+    image: imgDistribution,
   },
   {
     title: "Agro-processing Facility",
@@ -63,6 +67,7 @@ const projects: Project[] = [
     year: "2023",
     description:
       "Greenfield primary processing facility with cold chain and packaging integration.",
+    image: imgAgro,
   },
   {
     title: "Buy-and-Build Investment",
@@ -71,6 +76,7 @@ const projects: Project[] = [
     year: "2022",
     description:
       "Platform investment across a fragmented services category with operational improvements.",
+    image: imgEquity,
   },
   {
     title: "Capital Projects Advisory",
@@ -79,6 +85,7 @@ const projects: Project[] = [
     year: "2022",
     description:
       "Independent advisory on a multi-phase infrastructure programme for a public-sector client.",
+    image: imgAdvisory,
   },
   {
     title: "Luxury Residential Development",
@@ -87,6 +94,7 @@ const projects: Project[] = [
     year: "2022",
     description:
       "Premium residential development with integrated interior design and concierge fit-out.",
+    image: imgResidential,
   },
 ];
 
@@ -155,7 +163,7 @@ const Projects = () => {
                 key={p.title + i}
                 className="group flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md-soft hover:border-accent/40"
               >
-                <div className="aspect-[4/3] w-full bg-gradient-subtle" />
+                <img src={p.image} alt={p.title} loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                 <div className="p-6 flex flex-1 flex-col">
                   <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                     {p.division}
