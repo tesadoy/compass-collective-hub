@@ -4,6 +4,14 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Seo from "@/components/Seo";
+import imgMixedUse from "@/assets/proj-mixed-use.jpg";
+import imgHqFitout from "@/assets/proj-hq-fitout.jpg";
+import imgProcurement from "@/assets/proj-procurement.jpg";
+import imgDistribution from "@/assets/proj-distribution.jpg";
+import imgAgro from "@/assets/proj-agro.jpg";
+import imgEquity from "@/assets/proj-equity.jpg";
+import imgAdvisory from "@/assets/proj-advisory.jpg";
+import imgResidential from "@/assets/proj-residential.jpg";
 
 type Project = {
   title: string;
@@ -11,7 +19,9 @@ type Project = {
   location: string;
   year: string;
   description: string;
+  image: string;
 };
+
 
 const projects: Project[] = [
   {
