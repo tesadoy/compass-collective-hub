@@ -3,6 +3,7 @@ import { ArrowRight, Compass, Handshake, Layers, ShieldCheck, Sparkles, Users } 
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import aboutHero from "@/assets/about-hero.jpg";
+import tesleemOyedele from "@/assets/tesleem-oyedele.png.asset.json";
 
 const values = [
   {
@@ -44,7 +45,7 @@ const values = [
 ];
 
 const leadership = [
-  { name: "Leadership member", role: "Group Chairperson" },
+  { name: "Tesleem Oyedele", role: "Group Chairperson", image: tesleemOyedele.url },
   { name: "Leadership member", role: "Chief Executive Officer" },
   { name: "Leadership member", role: "Chief Operating Officer" },
   { name: "Leadership member", role: "Chief Financial Officer" },
@@ -150,7 +151,16 @@ const About = () => {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {leadership.map((person, i) => (
               <div key={i} className="rounded-xl border border-border bg-card p-6">
-                <div className="aspect-[4/5] w-full rounded-lg bg-gradient-subtle" />
+                <div className="aspect-[4/5] w-full overflow-hidden rounded-lg bg-gradient-subtle">
+                  {person.image ? (
+                    <img
+                      src={person.image}
+                      alt={`Portrait of ${person.name}`}
+                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  ) : null}
+                </div>
                 <p className="mt-4 font-display text-base font-semibold">{person.name}</p>
                 <p className="text-sm text-muted-foreground">{person.role}</p>
               </div>
