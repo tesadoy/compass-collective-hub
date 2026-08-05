@@ -23,6 +23,7 @@ import PortalRequests from "./pages/portal/PortalRequests.tsx";
 import PortalMessages from "./pages/portal/PortalMessages.tsx";
 import AdminUsers from "./pages/admin/AdminUsers.tsx";
 import AdminProjects from "./pages/admin/AdminProjects.tsx";
+import AdminJobs from "./pages/admin/AdminJobs.tsx";
 import AdminContacts from "./pages/admin/AdminContacts.tsx";
 import AdminMessages from "./pages/admin/AdminMessages.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminUsers />} />
               <Route path="projects" element={<AdminProjects />} />
+              <Route path="jobs" element={<AdminJobs />} />
               <Route path="contacts" element={<AdminContacts />} />
               <Route path="messages" element={<AdminMessages />} />
             </Route>
