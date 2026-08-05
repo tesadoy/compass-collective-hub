@@ -1,28 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, Globe2, GraduationCap, HeartHandshake, MapPin, Sparkles, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import Seo from "@/components/Seo";
+import { supabase } from "@/integrations/supabase/client";
 
-type Opening = {
+type Job = {
+  id: string;
   title: string;
-  division: string;
+  department: string;
   location: string;
   type: string;
+  description: string;
+  requirements: string[];
 };
-
-const openings: Opening[] = [
-  { title: "Senior Project Manager", division: "Development & Construction", location: "Headquarters · On-site", type: "Full-time" },
-  { title: "Procurement Lead", division: "Procurement & Supply", location: "Headquarters · Hybrid", type: "Full-time" },
-  { title: "Interior Design Associate", division: "Interior Design & Finishing", location: "Headquarters · On-site", type: "Full-time" },
-  { title: "Logistics Coordinator", division: "Logistics", location: "Regional · On-site", type: "Full-time" },
-  { title: "Investment Analyst", division: "Private Equity", location: "Headquarters · Hybrid", type: "Full-time" },
-  { title: "Agro-processing Operations Manager", division: "Farms & Agro-processing", location: "Field · On-site", type: "Full-time" },
-  { title: "Management Consultant", division: "Consulting Services", location: "Headquarters · Hybrid", type: "Full-time" },
-  { title: "Graduate Trainee Program", division: "Cross-divisional", location: "Headquarters", type: "Full-time · Entry" },
-];
 
 const values = [
   { icon: TrendingUp, title: "Ownership mindset", desc: "We hire people who treat the work like it's theirs — because it is." },
@@ -44,11 +38,25 @@ const benefits = [
 
 const Careers = () => {
   const [activeDivision, setActiveDivision] = useState<string>("All");
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchJobs = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from("jobs")
+        .select("id, title, department, location, type, description, requirements")
+        .eq("status", "open")
+        .order("created_at", { ascending: false });
+      if (!error) setJobs(data ?? []);
+      setLoading(false);
+    };
+    fetchJobs();
+  }, []);
 
-
-  const divisions = ["All", ...Array.from(new Set(openings.map((o) => o.division)))];
-  const filtered = activeDivision === "All" ? openings : openings.filter((o) => o.division === activeDivision);
+  const divisions = ["All", ...Array.from(new Set(jobs.map((j) => j.department)))];
+  const filtered = activeDivision === "All" ? jobs : jobs.filter((j) => j.department === activeDivision);
 
   return (
     <div>
@@ -135,57 +143,79 @@ const Careers = () => {
               Find your next role.
             </h2>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {divisions.map((d) => (
-              <button
-                key={d}
-                onClick={() => setActiveDivision(d)}
-                className={`px-3.5 py-1.5 text-sm font-medium rounded-full border transition-colors ${
-                  activeDivision === d
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-background text-muted-foreground border-border hover:text-foreground hover:border-foreground/40"
-                }`}
-              >
-                {d}
-              </button>
-            ))}
-          </div>
+          {!loading && jobs.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {divisions.map((d) => (
+                <button
+                  key={d}
+                  onClick={() => setActiveDivision(d)}
+                  className={`px-3.5 py-1.5 text-sm font-medium rounded-full border transition-colors ${
+                    activeDivision === d
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-background text-muted-foreground border-border hover:text-foreground hover:border-foreground/40"
+                  }`}
+                >
+                  {d}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
-        <div className="divide-y divide-border border-y border-border">
-          {filtered.map((o) => (
-            <div key={o.title} className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-6">
-              <div className="flex items-start gap-4">
-                <div className="grid h-11 w-11 place-items-center rounded-md bg-primary/10 text-primary shrink-0">
-                  <Briefcase className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground">{o.title}</h3>
-                  <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
-                    <span>{o.division}</span>
-                    <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />{o.location}</span>
-                    <Badge variant="outline" className="text-xs">{o.type}</Badge>
+        {loading ? (
+          <div className="space-y-4">
+            <Skeleton className="h-24 w-full" />
+            <Skeleton className="h-24 w-full" />
+            <Skeleton className="h-24 w-full" />
+          </div>
+        ) : jobs.length === 0 ? (
+          <div className="rounded-xl border border-dashed border-border bg-surface/50 p-10 text-center">
+            <h3 className="font-display text-xl font-semibold">No current openings</h3>
+            <p className="mt-2 max-w-xl mx-auto text-sm text-muted-foreground">
+              We are not actively hiring for any roles right now. Please check back soon, or send us your profile for future opportunities.
+            </p>
+            <Button asChild className="mt-6">
+              <Link to="/contact">Submit a general application</Link>
+            </Button>
+          </div>
+        ) : (
+          <div className="divide-y divide-border border-y border-border">
+            {filtered.map((o) => (
+              <div key={o.id} className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-6">
+                <div className="flex items-start gap-4">
+                  <div className="grid h-11 w-11 place-items-center rounded-md bg-primary/10 text-primary shrink-0">
+                    <Briefcase className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold text-foreground">{o.title}</h3>
+                    <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                      <span>{o.department}</span>
+                      <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />{o.location}</span>
+                      <Badge variant="outline" className="text-xs">{o.type}</Badge>
+                    </div>
                   </div>
                 </div>
+                <Button asChild variant="outline" size="sm" className="self-start md:self-center">
+                  <Link to="/contact" state={{ subject: `Application: ${o.title}` }}>
+                    Apply <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
-              <Button asChild variant="outline" size="sm" className="self-start md:self-center">
-                <Link to="/contact">
-                  Apply <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
-        <div className="mt-12 rounded-lg border border-dashed border-border p-8 text-center">
-          <h3 className="font-display text-xl font-semibold">Don't see your role?</h3>
-          <p className="mt-2 max-w-xl mx-auto text-sm text-muted-foreground">
-            We're always interested in meeting exceptional operators, builders and analysts. Send us your profile.
-          </p>
-          <Button asChild className="mt-6">
-            <Link to="/contact">Submit a general application</Link>
-          </Button>
-        </div>
+        {jobs.length > 0 && (
+          <div className="mt-12 rounded-lg border border-dashed border-border p-8 text-center">
+            <h3 className="font-display text-xl font-semibold">Don't see your role?</h3>
+            <p className="mt-2 max-w-xl mx-auto text-sm text-muted-foreground">
+              We're always interested in meeting exceptional operators, builders and analysts. Send us your profile.
+            </p>
+            <Button asChild className="mt-6">
+              <Link to="/contact">Submit a general application</Link>
+            </Button>
+          </div>
+        )}
       </section>
     </div>
   );
