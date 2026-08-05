@@ -1,5 +1,5 @@
 import { NavLink, Navigate, Outlet, Link } from "react-router-dom";
-import { Users, Briefcase, Inbox, Megaphone, ArrowLeft, LogOut } from "lucide-react";
+import { Users, Briefcase, Inbox, Megaphone, ArrowLeft, LogOut, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 const items = [
   { to: "/admin", label: "Users & roles", icon: Users, end: true },
   { to: "/admin/projects", label: "Projects", icon: Briefcase },
+  { to: "/admin/jobs", label: "Jobs", icon: UserPlus },
   { to: "/admin/contacts", label: "Contact leads", icon: Inbox },
   { to: "/admin/messages", label: "Announcements", icon: Megaphone },
 ];
