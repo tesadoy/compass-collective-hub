@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import aboutHero from "@/assets/about-hero.jpg";
 import tesleemOyedele from "@/assets/tesleem-oyedele.png.asset.json";
+import bamideleAdisa from "@/assets/bamidele-adisa.jpeg.asset.json";
 
 const values = [
   {
@@ -46,7 +47,7 @@ const values = [
 
 const leadership = [
   { name: "Tesleem Oyedele", role: "Group Chairperson", image: tesleemOyedele.url },
-  { name: "Leadership member", role: "Chief Executive Officer" },
+  { name: "Bamidele Adisa", role: "Chief Executive Officer", image: bamideleAdisa.url },
   { name: "Leadership member", role: "Chief Operating Officer" },
   { name: "Leadership member", role: "Chief Financial Officer" },
 ];
