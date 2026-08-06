@@ -108,11 +108,11 @@ const Home = () => {
             width={1920}
             height={1080}
             fetchPriority="high"
-            className="h-full w-full object-cover opacity-75 animate-kenburns"
+            className="h-full w-full object-cover opacity-95 animate-kenburns"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/60 to-primary/40" />
-        <div className="absolute inset-0 opacity-20 [background:radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_45%),radial-gradient(circle_at_80%_70%,hsl(var(--primary-glow))_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-primary/25 to-transparent" />
+        <div className="absolute inset-0 opacity-10 [background:radial-gradient(circle_at_30%_20%,hsl(var(--accent))_0%,transparent_45%),radial-gradient(circle_at_80%_70%,hsl(var(--primary-glow))_0%,transparent_50%)]" />
         {/* Subtle grid texture */}
         <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(hsl(var(--primary-foreground))_1px,transparent_1px),linear-gradient(90deg,hsl(var(--primary-foreground))_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="container-tight relative py-24 sm:py-32 lg:py-40">
