@@ -64,7 +64,7 @@ const About = () => {
           alt="Modern corporate boardroom overlooking a city skyline at golden hour"
           width={1920}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover opacity-67"
+          className="absolute inset-0 h-full w-full object-cover opacity-55"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/75 via-primary/55 to-primary/35" />
         <div className="container-tight relative py-20 sm:py-28">
