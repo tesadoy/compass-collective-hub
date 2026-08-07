@@ -108,7 +108,7 @@ const Home = () => {
             width={1920}
             height={1080}
             fetchPriority="high"
-            className="h-full w-full object-cover opacity-100 animate-kenburns"
+            className="h-full w-full object-cover opacity-[0.92] animate-kenburns"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/65 via-primary/45 to-primary/20" />
