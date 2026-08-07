@@ -12,7 +12,7 @@ import About from "./pages/About.tsx";
 import Divisions from "./pages/Divisions.tsx";
 import Projects from "./pages/Projects.tsx";
 import Contact from "./pages/Contact.tsx";
-import Insights from "./pages/Insights.tsx";
+
 import Careers from "./pages/Careers.tsx";
 import Privacy from "./pages/legal/Privacy.tsx";
 import Terms from "./pages/legal/Terms.tsx";
@@ -44,7 +44,7 @@ const App = () => (
               <Route path="/divisions" element={<Divisions />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/insights" element={<Insights />} />
+              
               <Route path="/careers" element={<Careers />} />
               <Route path="/legal/privacy" element={<Privacy />} />
               <Route path="/legal/terms" element={<Terms />} />
