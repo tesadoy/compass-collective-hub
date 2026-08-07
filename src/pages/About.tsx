@@ -146,8 +146,8 @@ const About = () => {
                 Operators who have built and scaled across sectors.
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Profiles below are placeholders — share your team and we'll publish properly
-                attributed bios and photography.
+                The leadership team steering TESADOY DYNAMICS across procurement, development,
+                capital and operations.
               </p>
             </div>
           </div>
