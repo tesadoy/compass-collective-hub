@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, Globe2, GraduationCap, HeartHandshake, MapPin, Sparkles, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 import Seo from "@/components/Seo";
-import { supabase } from "@/integrations/supabase/client";
 
 type Job = {
   id: string;
@@ -17,6 +15,10 @@ type Job = {
   description: string;
   requirements: string[];
 };
+
+// Public site currently runs without the backend. Open roles are managed in the
+// admin console (jobs table) and can be re-connected here when activated.
+const OPEN_JOBS: Job[] = [];
 
 const values = [
   { icon: TrendingUp, title: "Ownership mindset", desc: "We hire people who treat the work like it's theirs — because it is." },
