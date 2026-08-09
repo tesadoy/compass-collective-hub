@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TESADOY DYNAMICS</title>
+    <script>
+      // GitHub Pages SPA fallback: preserve the requested path and hand it to the router.
+      (function () {
+        var l = window.location;
+        sessionStorage.setItem('spa-redirect', l.pathname + l.search + l.hash);
+        var segments = l.pathname.split('/').filter(Boolean);
+        // Project sites are served from /<repo>/ — keep that prefix when redirecting.
+        var base = l.hostname.endsWith('github.io') && segments.length ? '/' + segments[0] + '/' : '/';
+        l.replace(l.origin + base);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
