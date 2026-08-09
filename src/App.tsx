@@ -44,7 +44,7 @@ const App = () => (
             path="/auth/*"
             element={
               <Suspense fallback={null}>
-                <BackendRoutes />
+                <AuthRoutes />
               </Suspense>
             }
           />
@@ -52,7 +52,7 @@ const App = () => (
             path="/portal/*"
             element={
               <Suspense fallback={null}>
-                <BackendRoutes />
+                <PortalRoutes />
               </Suspense>
             }
           />
@@ -60,7 +60,7 @@ const App = () => (
             path="/admin/*"
             element={
               <Suspense fallback={null}>
-                <BackendRoutes />
+                <AdminRoutes />
               </Suspense>
             }
           />
