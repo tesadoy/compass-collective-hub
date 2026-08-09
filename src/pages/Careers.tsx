@@ -40,22 +40,8 @@ const benefits = [
 
 const Careers = () => {
   const [activeDivision, setActiveDivision] = useState<string>("All");
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchJobs = async () => {
-      setLoading(true);
-      const { data, error } = await supabase
-        .from("jobs")
-        .select("id, title, department, location, type, description, requirements")
-        .eq("status", "open")
-        .order("created_at", { ascending: false });
-      if (!error) setJobs(data ?? []);
-      setLoading(false);
-    };
-    fetchJobs();
-  }, []);
+  const jobs = OPEN_JOBS;
+  const loading = false;
 
   const divisions = ["All", ...Array.from(new Set(jobs.map((j) => j.department)))];
   const filtered = activeDivision === "All" ? jobs : jobs.filter((j) => j.department === activeDivision);
