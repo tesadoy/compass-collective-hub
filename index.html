@@ -44,6 +44,18 @@
         }
       }
     </script>
+    <script>
+      // Restore the deep link captured by the GitHub Pages 404 fallback.
+      (function () {
+        var target = sessionStorage.getItem('spa-redirect');
+        if (target) {
+          sessionStorage.removeItem('spa-redirect');
+          if (target !== window.location.pathname + window.location.search + window.location.hash) {
+            window.history.replaceState(null, '', target);
+          }
+        }
+      })();
+    </script>
   </head>
 
   <body>
