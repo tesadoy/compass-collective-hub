@@ -17,7 +17,9 @@ import NotFound from "./pages/NotFound.tsx";
 
 // Backend-backed areas (auth, client portal, admin) are preserved and lazy-loaded,
 // so the public site never initializes the backend client.
-const BackendRoutes = lazy(() => import("./BackendRoutes.tsx"));
+const AuthRoutes = lazy(() => import("./BackendRoutes.tsx").then((m) => ({ default: m.AuthRoutes })));
+const PortalRoutes = lazy(() => import("./BackendRoutes.tsx").then((m) => ({ default: m.PortalRoutes })));
+const AdminRoutes = lazy(() => import("./BackendRoutes.tsx").then((m) => ({ default: m.AdminRoutes })));
 
 const queryClient = new QueryClient();
 
