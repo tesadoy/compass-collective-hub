@@ -79,24 +79,43 @@ const Contact = () => {
     }
     setErrors({});
     setSubmitting(true);
-    const { error } = await supabase.from("contact_submissions").insert([{
-      name: parsed.data.name,
-      email: parsed.data.email,
-      company: parsed.data.company || null,
-      phone: parsed.data.phone || null,
-      division: parsed.data.division || null,
-      message: parsed.data.message,
-    }]);
-    setSubmitting(false);
-    if (error) {
-      toast({ title: "Couldn't send", description: error.message, variant: "destructive" });
-      return;
+    try {
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) throw new Error("Form is not configured yet. Please email Contact@tesadoy.com.");
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New enquiry from ${parsed.data.name}${parsed.data.division ? ` — ${parsed.data.division}` : ""}`,
+          from_name: "TESADOY DYNAMICS Website",
+          replyto: parsed.data.email,
+          name: parsed.data.name,
+          email: parsed.data.email,
+          company: parsed.data.company || "—",
+          phone: parsed.data.phone || "—",
+          division: parsed.data.division || "—",
+          message: parsed.data.message,
+        }),
+      });
+      const result = await res.json();
+      if (!res.ok || !result.success) throw new Error(result.message || "Submission failed");
+
+      toast({
+        title: "Message received",
+        description: "Thanks for reaching out — we'll respond within two business days.",
+      });
+      setForm({ name: "", email: "", company: "", phone: "", division: "", message: "" });
+    } catch (err) {
+      toast({
+        title: "Couldn't send",
+        description: err instanceof Error ? err.message : "Please try again shortly.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
     }
-    toast({
-      title: "Message received",
-      description: "Thanks for reaching out — we'll respond within two business days.",
-    });
-    setForm({ name: "", email: "", company: "", phone: "", division: "", message: "" });
   };
 
   return (
