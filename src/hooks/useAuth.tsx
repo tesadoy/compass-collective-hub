@@ -63,8 +63,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useAuth = () => {
-  const v = useContext(Ctx);
-  if (!v) throw new Error("useAuth must be used inside AuthProvider");
-  return v;
+const signedOut: AuthCtx = {
+  session: null,
+  user: null,
+  roles: [],
+  isAdmin: false,
+  loading: false,
+  signOut: async () => {},
 };
+
+/** Returns a signed-out context on public pages that render without AuthProvider. */
+export const useAuth = () => useContext(Ctx) ?? signedOut;
