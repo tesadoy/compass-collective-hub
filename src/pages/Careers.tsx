@@ -151,11 +151,7 @@ const Careers = () => {
         </div>
 
         {loading ? (
-          <div className="space-y-4">
-            <Skeleton className="h-24 w-full" />
-            <Skeleton className="h-24 w-full" />
-            <Skeleton className="h-24 w-full" />
-          </div>
+          <div className="space-y-4" aria-hidden />
         ) : jobs.length === 0 ? (
           <div className="rounded-xl border border-dashed border-border bg-surface/50 p-10 text-center">
             <h3 className="font-display text-xl font-semibold">No current openings</h3>
