@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, Globe2, GraduationCap, HeartHandshake, MapPin, Sparkles, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 import Seo from "@/components/Seo";
-import { supabase } from "@/integrations/supabase/client";
 
 type Job = {
   id: string;
@@ -17,6 +15,10 @@ type Job = {
   description: string;
   requirements: string[];
 };
+
+// Public site currently runs without the backend. Open roles are managed in the
+// admin console (jobs table) and can be re-connected here when activated.
+const OPEN_JOBS: Job[] = [];
 
 const values = [
   { icon: TrendingUp, title: "Ownership mindset", desc: "We hire people who treat the work like it's theirs — because it is." },
@@ -38,22 +40,8 @@ const benefits = [
 
 const Careers = () => {
   const [activeDivision, setActiveDivision] = useState<string>("All");
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchJobs = async () => {
-      setLoading(true);
-      const { data, error } = await supabase
-        .from("jobs")
-        .select("id, title, department, location, type, description, requirements")
-        .eq("status", "open")
-        .order("created_at", { ascending: false });
-      if (!error) setJobs(data ?? []);
-      setLoading(false);
-    };
-    fetchJobs();
-  }, []);
+  const jobs = OPEN_JOBS;
+  const loading = false;
 
   const divisions = ["All", ...Array.from(new Set(jobs.map((j) => j.department)))];
   const filtered = activeDivision === "All" ? jobs : jobs.filter((j) => j.department === activeDivision);
@@ -163,11 +151,7 @@ const Careers = () => {
         </div>
 
         {loading ? (
-          <div className="space-y-4">
-            <Skeleton className="h-24 w-full" />
-            <Skeleton className="h-24 w-full" />
-            <Skeleton className="h-24 w-full" />
-          </div>
+          <div className="space-y-4" aria-hidden />
         ) : jobs.length === 0 ? (
           <div className="rounded-xl border border-dashed border-border bg-surface/50 p-10 text-center">
             <h3 className="font-display text-xl font-semibold">No current openings</h3>
