@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 
@@ -18,8 +17,7 @@ const navItems = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const { session } = useAuth();
-  const portalHref = session ? "/portal" : "/auth";
+  const portalHref = "/auth";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70">
@@ -51,7 +49,7 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-2">
           <Button asChild variant="ghost" size="sm">
-            <Link to={portalHref}>{session ? "Client Portal" : "Sign in"}</Link>
+            <Link to={portalHref}>Sign in</Link>
           </Button>
           <Button asChild size="sm">
             <Link to="/contact">Get in touch</Link>
@@ -91,7 +89,7 @@ const Header = () => {
             ))}
             <div className="mt-3 flex gap-2">
               <Button asChild variant="outline" size="sm" className="flex-1">
-                <Link to={portalHref} onClick={() => setOpen(false)}>{session ? "Client Portal" : "Sign in"}</Link>
+                <Link to={portalHref} onClick={() => setOpen(false)}>Sign in</Link>
               </Button>
               <Button asChild size="sm" className="flex-1">
                 <Link to="/contact" onClick={() => setOpen(false)}>Get in touch</Link>
