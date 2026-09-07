@@ -3,6 +3,7 @@ import { LayoutDashboard, FileText, MessageSquare, Megaphone, ShieldCheck, LogOu
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const items = [
   { to: "/portal", label: "Projects", icon: LayoutDashboard, end: true },

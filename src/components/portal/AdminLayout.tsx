@@ -3,6 +3,7 @@ import { Users, Briefcase, Inbox, Megaphone, ArrowLeft, LogOut, UserPlus } from 
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const items = [
   { to: "/admin", label: "Users & roles", icon: Users, end: true },
