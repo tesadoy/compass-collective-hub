@@ -145,9 +145,9 @@ const Divisions = () => {
           alt="Aerial view of a commercial development site at dusk"
           width={1920}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          className="absolute inset-0 h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-primary/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/65 to-primary/20" />
         <div className="container-tight relative py-20 sm:py-28">
           <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
             Our divisions
