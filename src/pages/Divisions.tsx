@@ -40,7 +40,7 @@ const divisions = [
   {
     id: "construction",
     image: imgConstruction,
-    alt: "Commercial construction site with tower crane at dusk",
+    alt: "Commercial construction site with tower cranes in daylight",
     icon: Hammer,
     title: "Development & Construction",
     summary:
@@ -88,7 +88,7 @@ const divisions = [
   {
     id: "equity",
     image: imgEquity,
-    alt: "Boardroom overlooking a city skyline at dusk",
+    alt: "Investment team meeting in a bright boardroom",
     icon: LineChart,
     title: "Private Equity",
     summary:
@@ -142,12 +142,12 @@ const Divisions = () => {
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <img
           src={divisionsHero}
-          alt="Aerial view of a commercial development site at dusk"
+          alt="Aerial view of a commercial development site in daylight"
           width={1920}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          className="absolute inset-0 h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-primary/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/65 to-primary/20" />
         <div className="container-tight relative py-20 sm:py-28">
           <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
             Our divisions
