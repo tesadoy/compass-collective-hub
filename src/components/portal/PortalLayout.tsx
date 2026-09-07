@@ -3,6 +3,7 @@ import { LayoutDashboard, FileText, MessageSquare, Megaphone, ShieldCheck, LogOu
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const items = [
   { to: "/portal", label: "Projects", icon: LayoutDashboard, end: true },
@@ -21,7 +22,7 @@ const PortalLayout = () => {
       <header className="border-b border-border bg-background">
         <div className="container-tight flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-md bg-gradient-accent text-primary-foreground font-display font-bold">T</span>
+            <img src={logo} alt="TESADOY DYNAMICS" className="h-10 w-10 object-contain" />
             <span className="font-display text-base font-semibold">TESADOY <span className="text-muted-foreground">Portal</span></span>
           </Link>
           <div className="flex items-center gap-2">

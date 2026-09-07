@@ -3,6 +3,7 @@ import { Users, Briefcase, Inbox, Megaphone, ArrowLeft, LogOut, UserPlus } from 
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const items = [
   { to: "/admin", label: "Users & roles", icon: Users, end: true },
@@ -23,7 +24,7 @@ const AdminLayout = () => {
       <header className="border-b border-border bg-primary text-primary-foreground">
         <div className="container-tight flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-md bg-white/10 font-display font-bold">T</span>
+            <img src={logo} alt="TESADOY DYNAMICS" className="h-10 w-10 object-contain" />
             <span className="font-display text-base font-semibold">TESADOY <span className="opacity-70">Admin</span></span>
           </Link>
           <div className="flex items-center gap-2">
