@@ -29,7 +29,6 @@ const footerSections = [
     title: "Resources",
     links: [
       { to: "/contact", label: "Contact" },
-      { to: "/portal", label: "Client Portal" },
       { to: "/legal/privacy", label: "Privacy" },
       { to: "/legal/terms", label: "Terms" },
     ],
