@@ -49,9 +49,16 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          <Button asChild variant="ghost" size="sm">
-            <Link to={portalHref}>Sign in</Link>
-          </Button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="ghost" size="sm" disabled>
+                Sign in
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom">
+              <p>Client portal coming soon</p>
+            </TooltipContent>
+          </Tooltip>
           <Button asChild size="sm">
             <Link to="/contact">Get in touch</Link>
           </Button>
