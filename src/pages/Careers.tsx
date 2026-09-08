@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Seo from "@/components/Seo";
+import careersHero from "@/assets/careers-hero.jpg";
 
 type Job = {
   id: string;
@@ -50,7 +51,15 @@ const Careers = () => {
     <div>
       <Seo title="Careers" description="Build a career at TESADOY DYNAMICS. Open roles across construction, procurement, logistics, agriculture, design, consulting and private equity." path="/careers" />
       {/* Hero */}
-      <section className="border-b border-border bg-gradient-hero text-primary-foreground">
+      <section className="relative isolate overflow-hidden border-b border-border bg-primary text-primary-foreground">
+        <img
+          src={careersHero}
+          alt="African professionals collaborating at a modern development in daylight"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/65 to-primary/10" />
         <div className="container-tight py-20 lg:py-28">
           <Badge variant="secondary" className="mb-5 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20 hover:bg-primary-foreground/15">
             Careers
