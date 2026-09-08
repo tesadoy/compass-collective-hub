@@ -12,6 +12,7 @@ import imgAgro from "@/assets/proj-agro.jpg";
 import imgEquity from "@/assets/proj-equity.jpg";
 import imgAdvisory from "@/assets/proj-advisory.jpg";
 import imgResidential from "@/assets/proj-residential.jpg";
+import projectsHero from "@/assets/projects-hero.jpg";
 
 type Project = {
   title: string;
@@ -120,15 +121,23 @@ const Projects = () => {
   return (
     <>
       <Seo title="Selected Projects" description="A selection of TESADOY DYNAMICS projects across construction, interiors, logistics, agriculture and private equity." path="/projects" />
-      <section className="bg-gradient-hero text-primary-foreground">
+      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
+        <img
+          src={projectsHero}
+          alt="Project team reviewing plans at a commercial development in daylight"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/65 to-primary/10" />
         <div className="container-tight py-20 sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/80">
             Selected projects
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             A portfolio shaped by integrated delivery.
           </h1>
-          <p className="mt-6 max-w-2xl text-white/75 text-lg leading-relaxed">
+          <p className="mt-6 max-w-2xl text-primary-foreground/85 text-lg leading-relaxed">
             Representative engagements across our divisions. Detailed case studies are available
             on request under appropriate confidentiality.
           </p>

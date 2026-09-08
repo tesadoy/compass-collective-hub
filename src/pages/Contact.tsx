@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import Seo from "@/components/Seo";
+import contactHero from "@/assets/contact-hero.jpg";
 
 const contactSchema = z.object({
   name: z
@@ -120,15 +121,23 @@ const Contact = () => {
   return (
     <>
       <Seo title="Contact TESADOY DYNAMICS" description="Get in touch to scope a project, request a proposal or partner with our team across construction, procurement, logistics, agriculture and advisory." path="/contact" />
-      <section className="bg-gradient-hero text-primary-foreground">
+      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
+        <img
+          src={contactHero}
+          alt="Welcoming modern corporate headquarters in bright daylight"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/60 to-primary/5" />
         <div className="container-tight py-20 sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/80">
             Contact
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             Let's discuss your next project.
           </h1>
-          <p className="mt-6 max-w-2xl text-white/75 text-lg leading-relaxed">
+          <p className="mt-6 max-w-2xl text-primary-foreground/85 text-lg leading-relaxed">
             Tell us about your scope, timeline and objectives. A senior member of our team will
             respond within two business days.
           </p>
