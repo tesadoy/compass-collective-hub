@@ -37,6 +37,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <ScrollToTop />
         <Routes>
           <Route element={<SiteLayout />}>
             <Route path="/" element={<Home />} />
