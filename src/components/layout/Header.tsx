@@ -96,11 +96,18 @@ const Header = () => {
               </NavLink>
             ))}
             <div className="mt-3 flex gap-2">
-              <Button asChild variant="outline" size="sm" className="flex-1">
-                <Link to={portalHref} onClick={() => setOpen(false)}>Sign in</Link>
-              </Button>
-              <Button asChild size="sm" className="flex-1">
-                <Link to="/contact" onClick={() => setOpen(false)}>Get in touch</Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="outline" size="sm" className="flex-1" disabled>
+                    Sign in
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom">
+                  <p>Client portal coming soon</p>
+                </TooltipContent>
+              </Tooltip>
+              <Button asChild size="sm" className="flex-1" onClick={() => setOpen(false)}>
+                <Link to="/contact">Get in touch</Link>
               </Button>
             </div>
           </div>
