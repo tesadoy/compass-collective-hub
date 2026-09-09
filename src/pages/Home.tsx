@@ -6,7 +6,7 @@ import {
   Leaf,
   LineChart,
   PaintRoller,
-  ShieldCheck,
+  Cpu,
   Sprout,
   Truck,
 } from "lucide-react";
@@ -65,16 +65,16 @@ const divisions = [
     href: "/divisions#consulting",
   },
   {
-    icon: ShieldCheck,
-    title: "Governance & Compliance",
+    icon: Cpu,
+    title: "Tech & Digital Solutions",
     description:
-      "Institutional-grade controls, reporting and stakeholder transparency across every mandate.",
-    href: "/about",
+      "Software, systems integration and digital infrastructure that power modern enterprises.",
+    href: "/divisions#tech",
   },
 ];
 
 const stats = [
-  { value: "7+", label: "Operating divisions" },
+  { value: "8+", label: "Operating divisions" },
   { value: "100%", label: "In-house delivery" },
   { value: "24/7", label: "Client coordination" },
   { value: "0", label: "Compromise on standards" },

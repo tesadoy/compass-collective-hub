@@ -57,7 +57,7 @@ const leadership = [
 const About = () => {
   return (
     <>
-      <Seo title="About TESADOY DYNAMICS" description="An integrated contracting group built on institutional rigor, long-horizon partnerships and integrated delivery across seven disciplines." path="/about" />
+      <Seo title="About TESADOY DYNAMICS" description="An integrated contracting group built on institutional rigor, long-horizon partnerships and integrated delivery across eight disciplines." path="/about" />
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <img
           src={aboutHero}
