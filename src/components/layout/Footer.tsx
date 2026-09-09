@@ -23,6 +23,7 @@ const footerSections = [
       { to: "/divisions#equity", label: "Private Equity" },
       { to: "/divisions#agriculture", label: "Farms & Agro-processing" },
       { to: "/divisions#consulting", label: "Consulting Services" },
+      { to: "/divisions#tech", label: "Tech & Digital Solutions" },
     ],
   },
   {

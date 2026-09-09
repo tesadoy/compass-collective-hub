@@ -135,12 +135,28 @@ const divisions = [
       "Transaction support",
     ],
   },
+  {
+    id: "tech",
+    image: imgTech,
+    alt: "Technology team working at workstations in a bright modern office",
+    icon: Cpu,
+    title: "Tech & Digital Solutions",
+    summary:
+      "Software, systems integration and digital infrastructure that power modern enterprises.",
+    services: [
+      "Custom software & web platform development",
+      "Enterprise systems integration (ERP, CRM)",
+      "Cloud infrastructure & migration",
+      "Data analytics & business intelligence",
+      "IT support & managed services",
+    ],
+  },
 ];
 
 const Divisions = () => {
   return (
     <>
-      <Seo title="Our Divisions" description="Seven operating divisions: procurement, construction, interiors, logistics, private equity, agriculture and consulting." path="/divisions" />
+      <Seo title="Our Divisions" description="Eight operating divisions: procurement, construction, interiors, logistics, private equity, agriculture, consulting and tech." path="/divisions" />
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <img
           src={divisionsHero}
@@ -155,7 +171,7 @@ const Divisions = () => {
             Our divisions
           </p>
           <h1 className="animate-fade-up delay-100 mt-4 max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-            Seven service lines, one operating standard.
+            Eight service lines, one operating standard.
           </h1>
           <p className="animate-fade-up delay-200 mt-6 max-w-2xl text-white/80 text-lg leading-relaxed">
             Engage a single division or commission integrated end-to-end delivery — every line
