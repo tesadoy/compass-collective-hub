@@ -181,10 +181,6 @@ const Projects = () => {
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground flex-1">
                     {p.description}
                   </p>
-                  <div className="mt-5 flex items-center justify-between text-xs text-muted-foreground">
-                    <span>{p.location}</span>
-                    <span>{p.year}</span>
-                  </div>
                 </div>
               </article>
             ))}
