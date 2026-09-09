@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Building2,
+  Cpu,
   Hammer,
   Leaf,
   LineChart,
@@ -19,6 +20,7 @@ import imgLogistics from "@/assets/div-logistics.jpg";
 import imgEquity from "@/assets/div-equity.jpg";
 import imgAgriculture from "@/assets/div-agriculture.jpg";
 import imgConsulting from "@/assets/div-consulting.jpg";
+import imgTech from "@/assets/div-tech.jpg";
 
 const divisions = [
   {
