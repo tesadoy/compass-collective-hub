@@ -18,7 +18,7 @@ const footerSections = [
     links: [
       { to: "/divisions#procurement", label: "Procurement & Supply" },
       { to: "/divisions#construction", label: "Development & Construction" },
-      { to: "/divisions#interiors", label: "Interior Design & Finishing" },
+      { to: "/divisions#interiors", label: "Renovation & Interior Finishing" },
       { to: "/divisions#logistics", label: "Logistics" },
       { to: "/divisions#equity", label: "Private Equity" },
       { to: "/divisions#agriculture", label: "Farms & Agro-processing" },

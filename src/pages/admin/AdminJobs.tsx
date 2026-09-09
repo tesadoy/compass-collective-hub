@@ -25,7 +25,7 @@ interface Job {
 const divisions = [
   "Procurement & Supply",
   "Development & Construction",
-  "Interior Design & Finishing",
+  "Renovation & Interior Finishing",
   "Logistics",
   "Private Equity",
   "Farms & Agro-processing",

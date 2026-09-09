@@ -31,9 +31,9 @@ const divisions = [
   },
   {
     icon: PaintRoller,
-    title: "Interior Design & Finishing",
+    title: "Renovation & Interior Finishing",
     description:
-      "Bespoke interiors, fit-out and finishing for offices, hospitality and luxury residences.",
+      "Renovation, bespoke interiors, fit-out and finishing for offices, hospitality and luxury residences.",
     href: "/divisions#interiors",
   },
   {

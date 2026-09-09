@@ -58,11 +58,11 @@ const divisions = [
   {
     id: "interiors",
     image: imgInteriors,
-    alt: "Luxury modern office interior fit-out",
+    alt: "Bright modern office renovation and interior fit-out",
     icon: PaintRoller,
-    title: "Interior Design & Finishing",
+    title: "Renovation & Interior Finishing",
     summary:
-      "Bespoke interiors, fit-out and finishing for offices, hospitality and luxury residences.",
+      "Renovation, bespoke interiors, fit-out and finishing for offices, hospitality and luxury residences.",
     services: [
       "Concept design & space planning",
       "FF&E sourcing and specification",

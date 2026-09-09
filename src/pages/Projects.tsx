@@ -35,12 +35,12 @@ const projects: Project[] = [
     image: imgMixedUse,
   },
   {
-    title: "Corporate HQ Fit-out",
-    division: "Interior Design & Finishing",
+    title: "Corporate HQ Renovation & Fit-out",
+    division: "Renovation & Interior Finishing",
     location: "Project location",
     year: "2024",
     description:
-      "Turnkey design and fit-out of a multi-floor corporate headquarters with bespoke joinery.",
+      "Turnkey renovation, design and fit-out of a multi-floor corporate headquarters with bespoke joinery.",
     image: imgHqFitout,
   },
   {
@@ -103,7 +103,7 @@ const filters = [
   "All",
   "Procurement & Supply",
   "Development & Construction",
-  "Interior Design & Finishing",
+  "Renovation & Interior Finishing",
   "Logistics",
   "Private Equity",
   "Farms & Agro-processing",
