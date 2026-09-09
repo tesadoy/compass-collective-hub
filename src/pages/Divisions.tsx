@@ -62,7 +62,7 @@ const divisions = [
     icon: PaintRoller,
     title: "Renovation & Interior Finishing",
     summary:
-      "Renovation, bespoke interiors, fit-out and finishing for offices, hospitality and luxury residences."
+      "Renovation, bespoke interiors, fit-out and finishing for offices, hospitality and luxury residences.",
     services: [
       "Concept design & space planning",
       "FF&E sourcing and specification",
