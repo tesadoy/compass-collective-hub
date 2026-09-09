@@ -74,7 +74,7 @@ const divisions = [
 ];
 
 const stats = [
-  { value: "7+", label: "Operating divisions" },
+  { value: "8+", label: "Operating divisions" },
   { value: "100%", label: "In-house delivery" },
   { value: "24/7", label: "Client coordination" },
   { value: "0", label: "Compromise on standards" },
