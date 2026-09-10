@@ -21,8 +21,9 @@ const Terms = () => (
 
         <h2 className="font-display text-xl font-semibold mt-8">2. Services</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
-          TESADOY DYNAMICS provides procurement, construction, interior design, logistics, private
-          equity, agriculture and consulting services. Specific scope, deliverables and fees are
+          TESADOY DYNAMICS provides procurement and supply, development and construction, renovation
+          and interior finishing, logistics, private equity, farms and agro-processing, consulting
+          services, and tech and digital solutions. Specific scope, deliverables and fees are
           governed by a separate written agreement.
         </p>
 

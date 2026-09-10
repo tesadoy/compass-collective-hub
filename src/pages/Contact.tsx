@@ -177,8 +177,8 @@ const Contact = () => {
               <h3 className="font-display text-base font-semibold">Press & investors</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 For media, partnership or investment enquiries, please email{" "}
-                <a href="mailto:Contact@tesadoy.com" className="text-foreground underline">
-                  Contact@tesadoy.com
+                <a href="mailto:info@tesadoy.com" className="text-foreground underline">
+                  info@tesadoy.com
                 </a>
                 .
               </p>
