@@ -3,10 +3,10 @@ import { ArrowRight, Compass, Handshake, Layers, ShieldCheck, Sparkles, Users } 
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import aboutHero from "@/assets/about-hero.jpg";
-import tesleemOyedele from "@/assets/tesleem-oyedele.png.asset.json";
-import bamideleAdisa from "@/assets/bamidele-adisa.jpeg.asset.json";
-import christianCelestine from "@/assets/christian-celestine.png.asset.json";
-import lateefAdeyemi from "@/assets/lateef-adeyemi.jpeg.asset.json";
+import tesleemOyedele from "@/assets/leadership-tesleem.png";
+import bamideleAdisa from "@/assets/leadership-bamidele.png";
+import christianCelestine from "@/assets/leadership-christian.png";
+import lateefAdeyemi from "@/assets/leadership-lateef.png";
 
 const values = [
   {
@@ -153,20 +153,27 @@ const About = () => {
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {leadership.map((person, i) => (
-              <div key={i} className="rounded-xl border border-border bg-card p-6">
-                <div className="aspect-[4/5] w-full overflow-hidden rounded-lg bg-gradient-subtle">
+              <article
+                key={person.name}
+                className="group overflow-hidden rounded-xl border border-border bg-card p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-md-soft sm:p-4"
+              >
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg bg-muted ring-1 ring-border/50">
                   {person.image ? (
                     <img
                       src={person.image}
                       alt={`Portrait of ${person.name}`}
-                      className="h-full w-full object-cover object-top"
+                      width={1200}
+                      height={1500}
+                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                       loading="lazy"
                     />
                   ) : null}
                 </div>
-                <p className="mt-4 font-display text-base font-semibold">{person.name}</p>
-                <p className="text-sm text-muted-foreground">{person.role}</p>
-              </div>
+                <div className="px-1 pb-1 pt-4">
+                  <p className="font-display text-base font-semibold leading-tight">{person.name}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{person.role}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
