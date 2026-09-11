@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Link to="/" className="inline-flex items-center" aria-label="TESADOY DYNAMICS home">
-              <img src={logo} alt="TESADOY DYNAMICS" className="h-12 w-auto" />
+              <img src={logo} alt="TESADOY DYNAMICS" className="h-[70px] w-auto" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               An integrated contracting group delivering procurement, construction, logistics,
