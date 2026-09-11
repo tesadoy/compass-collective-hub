@@ -48,10 +48,10 @@ const values = [
 ];
 
 const leadership = [
-  { name: "Tesleem Oyedele", role: "Group Chairperson", image: tesleemOyedele.url },
-  { name: "Bamidele Adisa", role: "Chief Executive Officer", image: bamideleAdisa.url },
-  { name: "Christian Celestine", role: "Chief Operating Officer", image: christianCelestine.url },
-  { name: "Lateef Adeyemi", role: "Chief Financial Officer", image: lateefAdeyemi.url },
+  { name: "Tesleem Oyedele", role: "Group Chairperson", image: tesleemOyedele },
+  { name: "Bamidele Adisa", role: "Chief Executive Officer", image: bamideleAdisa },
+  { name: "Christian Celestine", role: "Chief Operating Officer", image: christianCelestine },
+  { name: "Lateef Adeyemi", role: "Chief Financial Officer", image: lateefAdeyemi },
 ];
 
 const About = () => {
