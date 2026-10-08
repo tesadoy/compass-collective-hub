@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { imagetools } from "vite-imagetools";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -14,7 +15,20 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    imagetools({
+      // Only opaque PNG sources are transcoded; JPEGs and transparent logos stay untouched.
+      // Inspect the actual format because the home hero has a .jpg name but PNG data.
+      defaultDirectives: async (_url, metadata) => {
+        const source = await metadata();
+        return source.format === "png" && !source.hasAlpha
+          ? new URLSearchParams({ format: "webp", lossless: "true", effort: "6" })
+          : new URLSearchParams();
+      },
+    }),
+    react(),
+    mode === "development" && componentTagger(),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
