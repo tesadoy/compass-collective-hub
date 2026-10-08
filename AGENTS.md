@@ -1,5 +1,5 @@
 # Architecture rules
 
-- Keep the public home page eager and other public pages lazy inside the shared layout, using router transitions and a scroll reset within the page Suspense boundary to preserve navigation appearance and top-of-page behavior while reducing initial JavaScript.
+- Preserve eager public-page loading and existing scroll behavior; optimize download payloads without introducing navigation loading states.
 - Use vite-imagetools for lossless build-time conversion of opaque PNG sources to WebP; retain original source files, dimensions, JPEGs, and transparent logos to preserve quality and static hosting compatibility.
 - Keep backend-backed routes isolated and lazy-loaded; public routes must remain usable without backend activation.
