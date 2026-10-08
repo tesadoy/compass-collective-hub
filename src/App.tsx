@@ -6,14 +6,16 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import SiteLayout from "@/components/layout/SiteLayout";
 import Home from "./pages/Home.tsx";
-import About from "./pages/About.tsx";
-import Divisions from "./pages/Divisions.tsx";
-import Projects from "./pages/Projects.tsx";
-import Contact from "./pages/Contact.tsx";
-import Careers from "./pages/Careers.tsx";
-import Privacy from "./pages/legal/Privacy.tsx";
-import Terms from "./pages/legal/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
+
+// Keep the home page immediate; other public pages load only when visited.
+const About = lazy(() => import("./pages/About.tsx"));
+const Divisions = lazy(() => import("./pages/Divisions.tsx"));
+const Projects = lazy(() => import("./pages/Projects.tsx"));
+const Contact = lazy(() => import("./pages/Contact.tsx"));
+const Careers = lazy(() => import("./pages/Careers.tsx"));
+const Privacy = lazy(() => import("./pages/legal/Privacy.tsx"));
+const Terms = lazy(() => import("./pages/legal/Terms.tsx"));
 
 // Backend-backed areas (auth, client portal, admin) are preserved and lazy-loaded,
 // so the public site never initializes the backend client.
@@ -36,7 +38,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={import.meta.env.BASE_URL} future={{ v7_startTransition: true }}>
         <ScrollToTop />
         <Routes>
           <Route element={<SiteLayout />}>
