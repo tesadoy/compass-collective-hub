@@ -38,13 +38,14 @@ const contactSchema = z.object({
 });
 
 const divisionOptions = [
+  "Consulting Services",
   "Procurement & Supply",
+  "Logistics",
   "Development & Construction",
   "Renovation & Interior Finishing",
-  "Logistics",
+  "Tech & Digital Solutions",
   "Private Equity",
   "Farms & Agro-processing",
-  "Consulting Services",
   "General enquiry",
 ];
 
@@ -120,7 +121,7 @@ const Contact = () => {
 
   return (
     <>
-      <Seo title="Contact TESADOY DYNAMICS" description="Get in touch to scope a project, request a proposal or partner with our team across construction, procurement, logistics, agriculture and advisory." path="/contact" />
+      <Seo title="Contact TESADOY DYNAMICS" description="Get in touch to scope a project, request a proposal or partner with our team across consulting, procurement, logistics, construction, interiors, technology, private equity and agriculture." path="/contact" />
       <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
         <img
           src={contactHero}

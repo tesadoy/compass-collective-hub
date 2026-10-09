@@ -49,7 +49,7 @@ const Careers = () => {
 
   return (
     <div>
-      <Seo title="Careers" description="Build a career at TESADOY DYNAMICS. Open roles across construction, procurement, logistics, agriculture, design, consulting and private equity." path="/careers" />
+      <Seo title="Careers" description="Build a career at TESADOY DYNAMICS. Open roles across consulting, procurement, logistics, construction, design, technology, private equity and agriculture." path="/careers" />
       {/* Hero */}
       <section className="relative isolate overflow-hidden border-b border-border bg-primary text-primary-foreground">
         <img

@@ -16,14 +16,14 @@ const footerSections = [
   {
     title: "Divisions",
     links: [
+      { to: "/divisions#consulting", label: "Consulting Services" },
       { to: "/divisions#procurement", label: "Procurement & Supply" },
+      { to: "/divisions#logistics", label: "Logistics" },
       { to: "/divisions#construction", label: "Development & Construction" },
       { to: "/divisions#interiors", label: "Renovation & Interior Finishing" },
-      { to: "/divisions#logistics", label: "Logistics" },
+      { to: "/divisions#tech", label: "Tech & Digital Solutions" },
       { to: "/divisions#equity", label: "Private Equity" },
       { to: "/divisions#agriculture", label: "Farms & Agro-processing" },
-      { to: "/divisions#consulting", label: "Consulting Services" },
-      { to: "/divisions#tech", label: "Tech & Digital Solutions" },
     ],
   },
   {
@@ -46,8 +46,8 @@ const Footer = () => {
               <img src={logo} alt="TESADOY DYNAMICS" className="h-[70px] w-auto" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              An integrated contracting group delivering procurement, construction, logistics,
-              agriculture and advisory services with institutional rigor.
+              An integrated contracting group delivering consulting, procurement, logistics,
+              construction and agriculture services with institutional rigor.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">

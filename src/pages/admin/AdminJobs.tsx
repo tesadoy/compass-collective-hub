@@ -23,13 +23,14 @@ interface Job {
 }
 
 const divisions = [
+  "Consulting Services",
   "Procurement & Supply",
+  "Logistics",
   "Development & Construction",
   "Renovation & Interior Finishing",
-  "Logistics",
+  "Tech & Digital Solutions",
   "Private Equity",
   "Farms & Agro-processing",
-  "Consulting Services",
   "Cross-divisional",
 ];
 

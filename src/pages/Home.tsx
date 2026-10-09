@@ -16,11 +16,25 @@ import heroImage from "@/assets/hero-construction.jpg";
 
 const divisions = [
   {
+    icon: Leaf,
+    title: "Consulting Services",
+    description:
+      "Advisory across strategy, operations, infrastructure and capital projects.",
+    href: "/divisions#consulting",
+  },
+  {
     icon: Building2,
     title: "Procurement & Supply",
     description:
       "End-to-end sourcing, vendor qualification and supply chain execution for institutional buyers.",
     href: "/divisions#procurement",
+  },
+  {
+    icon: Truck,
+    title: "Logistics",
+    description:
+      "Freight, warehousing, customs and last-mile coordination across regional corridors.",
+    href: "/divisions#logistics",
   },
   {
     icon: Hammer,
@@ -37,11 +51,11 @@ const divisions = [
     href: "/divisions#interiors",
   },
   {
-    icon: Truck,
-    title: "Logistics",
+    icon: Cpu,
+    title: "Tech & Digital Solutions",
     description:
-      "Freight, warehousing, customs and last-mile coordination across regional corridors.",
-    href: "/divisions#logistics",
+      "Software, systems integration and digital infrastructure that power modern enterprises.",
+    href: "/divisions#tech",
   },
   {
     icon: LineChart,
@@ -57,20 +71,6 @@ const divisions = [
       "Integrated farming, primary processing and offtake for staple and high-value crops.",
     href: "/divisions#agriculture",
   },
-  {
-    icon: Leaf,
-    title: "Consulting Services",
-    description:
-      "Advisory across strategy, operations, infrastructure and capital projects.",
-    href: "/divisions#consulting",
-  },
-  {
-    icon: Cpu,
-    title: "Tech & Digital Solutions",
-    description:
-      "Software, systems integration and digital infrastructure that power modern enterprises.",
-    href: "/divisions#tech",
-  },
 ];
 
 const stats = [
@@ -85,7 +85,7 @@ const Home = () => {
     <>
       <Seo
         title="TESADOY DYNAMICS — Multi-Sector Contracting Group"
-        description="Integrated procurement, construction, interiors, logistics, private equity, agriculture and consulting — delivered with institutional discipline."
+        description="Integrated consulting, procurement, logistics, construction, interiors, technology, private equity and agriculture — delivered with institutional discipline."
         path="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -94,7 +94,7 @@ const Home = () => {
           url: typeof window !== "undefined" ? window.location.origin : "",
           logo: "/favicon.png",
           description:
-            "Integrated contracting group across procurement, construction, interiors, logistics, private equity, agriculture and consulting.",
+            "Integrated contracting group across consulting, procurement, logistics, construction, interiors, technology, private equity and agriculture.",
           sameAs: [],
         }}
       />
@@ -125,9 +125,9 @@ const Home = () => {
             <span className="text-white/70"> infrastructure of ambitious organizations.</span>
           </h1>
           <p className="animate-fade-up delay-200 mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-white/80">
-            TESADOY DYNAMICS is an integrated contracting group operating across procurement,
-            development, interiors, logistics, private equity, agriculture and advisory —
-            delivered with institutional discipline.
+            TESADOY DYNAMICS is an integrated contracting group operating across consulting,
+            procurement, logistics, development, interiors, technology, private equity and
+            agriculture — delivered with institutional discipline.
           </p>
           <div className="animate-fade-up delay-300 mt-10 flex flex-col sm:flex-row gap-3">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 hover-scale">

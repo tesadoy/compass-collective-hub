@@ -119,9 +119,9 @@ const About = () => {
             An integrated contracting group built for ambitious mandates.
           </h1>
           <p className="animate-fade-up delay-200 mt-6 max-w-2xl text-white/80 text-lg leading-relaxed">
-            We bring together procurement, development, interiors, logistics, capital, agriculture
-            and advisory under one operating standard — so our clients can move faster, with less
-            risk, on the projects that matter most.
+            We bring together advisory, procurement, logistics, development, interiors, technology,
+            capital and agriculture under one operating standard — so our clients can move faster,
+            with less risk, on the projects that matter most.
           </p>
         </div>
       </section>
