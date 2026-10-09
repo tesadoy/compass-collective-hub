@@ -16,14 +16,14 @@ const footerSections = [
   {
     title: "Divisions",
     links: [
+      { to: "/divisions#consulting", label: "Consulting Services" },
       { to: "/divisions#procurement", label: "Procurement & Supply" },
+      { to: "/divisions#logistics", label: "Logistics" },
       { to: "/divisions#construction", label: "Development & Construction" },
       { to: "/divisions#interiors", label: "Renovation & Interior Finishing" },
-      { to: "/divisions#logistics", label: "Logistics" },
+      { to: "/divisions#tech", label: "Tech & Digital Solutions" },
       { to: "/divisions#equity", label: "Private Equity" },
       { to: "/divisions#agriculture", label: "Farms & Agro-processing" },
-      { to: "/divisions#consulting", label: "Consulting Services" },
-      { to: "/divisions#tech", label: "Tech & Digital Solutions" },
     ],
   },
   {

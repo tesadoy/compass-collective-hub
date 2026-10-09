@@ -15,7 +15,7 @@ interface Project {
   status: string; progress: number; client_id: string | null;
 }
 
-const divisions = ["Procurement","Construction","Interior","Logistics","Private Equity","Agriculture","Consulting"];
+const divisions = ["Consulting","Procurement","Logistics","Construction","Interior","Tech","Private Equity","Agriculture"];
 const statuses = ["planning","active","on_hold","completed"];
 
 const AdminProjects = () => {

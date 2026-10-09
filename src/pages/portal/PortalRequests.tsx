@@ -17,7 +17,7 @@ interface Req {
   priority: string; status: string; created_at: string;
 }
 
-const divisions = ["Procurement","Construction","Interior","Logistics","Private Equity","Agriculture","Consulting","General"];
+const divisions = ["Consulting","Procurement","Logistics","Construction","Interior","Tech","Private Equity","Agriculture","General"];
 
 const schema = z.object({
   subject: z.string().trim().min(3).max(200),

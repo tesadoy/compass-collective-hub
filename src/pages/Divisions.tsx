@@ -24,6 +24,22 @@ import imgTech from "@/assets/div-tech.jpg";
 
 const divisions = [
   {
+    id: "consulting",
+    image: imgConsulting,
+    alt: "Consultants reviewing documents in a modern office",
+    icon: Leaf,
+    title: "Consulting Services",
+    summary:
+      "Advisory across strategy, operations, infrastructure and capital projects.",
+    services: [
+      "Corporate & growth strategy",
+      "Operations and performance improvement",
+      "Infrastructure & capital project advisory",
+      "Market entry & feasibility",
+      "Transaction support",
+    ],
+  },
+  {
     id: "procurement",
     image: imgProcurement,
     alt: "Warehouse team managing procurement inventory",
@@ -37,6 +53,22 @@ const divisions = [
       "Tender management & evaluation",
       "Inventory planning & fulfilment",
       "Equipment, materials and consumables supply",
+    ],
+  },
+  {
+    id: "logistics",
+    image: imgLogistics,
+    alt: "Freight terminal with containers and cargo trucks",
+    icon: Truck,
+    title: "Logistics",
+    summary:
+      "Freight, warehousing, customs and last-mile coordination across regional corridors.",
+    services: [
+      "International freight (air, sea, road)",
+      "Customs clearing & forwarding",
+      "Bonded and ambient warehousing",
+      "Distribution & last-mile",
+      "Project logistics for heavy cargo",
     ],
   },
   {
@@ -72,19 +104,19 @@ const divisions = [
     ],
   },
   {
-    id: "logistics",
-    image: imgLogistics,
-    alt: "Freight terminal with containers and cargo trucks",
-    icon: Truck,
-    title: "Logistics",
+    id: "tech",
+    image: imgTech,
+    alt: "Technology team working at workstations in a bright modern office",
+    icon: Cpu,
+    title: "Tech & Digital Solutions",
     summary:
-      "Freight, warehousing, customs and last-mile coordination across regional corridors.",
+      "Software, systems integration and digital infrastructure that power modern enterprises.",
     services: [
-      "International freight (air, sea, road)",
-      "Customs clearing & forwarding",
-      "Bonded and ambient warehousing",
-      "Distribution & last-mile",
-      "Project logistics for heavy cargo",
+      "Custom software & web platform development",
+      "Enterprise systems integration (ERP, CRM)",
+      "Cloud infrastructure & migration",
+      "Data analytics & business intelligence",
+      "IT support & managed services",
     ],
   },
   {
@@ -119,44 +151,12 @@ const divisions = [
       "Outgrower programs",
     ],
   },
-  {
-    id: "consulting",
-    image: imgConsulting,
-    alt: "Consultants reviewing documents in a modern office",
-    icon: Leaf,
-    title: "Consulting Services",
-    summary:
-      "Advisory across strategy, operations, infrastructure and capital projects.",
-    services: [
-      "Corporate & growth strategy",
-      "Operations and performance improvement",
-      "Infrastructure & capital project advisory",
-      "Market entry & feasibility",
-      "Transaction support",
-    ],
-  },
-  {
-    id: "tech",
-    image: imgTech,
-    alt: "Technology team working at workstations in a bright modern office",
-    icon: Cpu,
-    title: "Tech & Digital Solutions",
-    summary:
-      "Software, systems integration and digital infrastructure that power modern enterprises.",
-    services: [
-      "Custom software & web platform development",
-      "Enterprise systems integration (ERP, CRM)",
-      "Cloud infrastructure & migration",
-      "Data analytics & business intelligence",
-      "IT support & managed services",
-    ],
-  },
 ];
 
 const Divisions = () => {
   return (
     <>
-      <Seo title="Our Divisions" description="Eight operating divisions: procurement, construction, interiors, logistics, private equity, agriculture, consulting and tech." path="/divisions" />
+      <Seo title="Our Divisions" description="Eight operating divisions: consulting, procurement, logistics, construction, interiors, tech, private equity and agriculture." path="/divisions" />
       <section className="relative overflow-hidden bg-gradient-hero text-primary-foreground">
         <img
           src={divisionsHero}
