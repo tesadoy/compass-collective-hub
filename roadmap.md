@@ -7,3 +7,4 @@
 - [x] Reduce image download sizes without changing pixels or dimensions
 - [x] Reduce loading payloads while preserving existing navigation and design
 - [x] Verify public pages and static deployment compatibility
+- [x] Replace About leadership section with a "How we work" engagement model and drop the portrait files
