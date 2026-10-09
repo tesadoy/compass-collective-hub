@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Compass, Handshake, Layers, ShieldCheck, Sparkles, Users } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ClipboardList,
+  Compass,
+  Handshake,
+  HardHat,
+  Layers,
+  ShieldCheck,
+  Sparkles,
+  Users,
+  Wrench,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import aboutHero from "@/assets/about-hero.jpg";
-import tesleemOyedele from "@/assets/leadership-tesleem.png";
-import bamideleAdisa from "@/assets/leadership-bamidele.png";
-import christianCelestine from "@/assets/leadership-christian.png";
-import lateefAdeyemi from "@/assets/leadership-lateef.png";
 
 const values = [
   {
@@ -47,11 +55,47 @@ const values = [
   },
 ];
 
-const leadership = [
-  { name: "Tesleem Oyedele", role: "Group Chairperson", image: tesleemOyedele },
-  { name: "Bamidele Adisa", role: "Chief Executive Officer", image: bamideleAdisa },
-  { name: "Christian Celestine", role: "Chief Operating Officer", image: christianCelestine },
-  { name: "Lateef Adeyemi", role: "Chief Financial Officer", image: lateefAdeyemi },
+const engagements = [
+  {
+    step: "01",
+    icon: ClipboardList,
+    title: "Scope & feasibility",
+    description:
+      "We start from your objective, site and budget, then return a written scope, risk register and delivery plan before anything is committed.",
+    output: "Scope document, risk register, delivery plan",
+  },
+  {
+    step: "02",
+    icon: HardHat,
+    title: "Mobilization",
+    description:
+      "Teams, vendors and equipment are qualified and contracted, permits confirmed, and a single point of coordination is appointed for the mandate.",
+    output: "Work programme, vendor pack, named coordinator",
+  },
+  {
+    step: "03",
+    icon: Layers,
+    title: "Execution & control",
+    description:
+      "Works run against milestone schedules with cost, quality and safety checks at every hold point — reported to you on a fixed cadence.",
+    output: "Progress, cost and HSE reporting",
+  },
+  {
+    step: "04",
+    icon: CheckCircle2,
+    title: "Verification & handover",
+    description:
+      "Snagging, testing and inspection close out each package, with as-built documentation and sign-off before final certification.",
+    output: "Punch list, test records, as-built pack",
+  },
+  {
+    step: "05",
+    icon: Wrench,
+    title: "Operations & support",
+    description:
+      "Maintenance, supply and service agreements keep the asset performing after delivery, with one partner accountable for the whole.",
+    output: "Service agreement, response commitments",
+  },
 ];
 
 const About = () => {
@@ -137,43 +181,40 @@ const About = () => {
 
       <section className="py-20 sm:py-24">
         <div className="container-tight">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                Leadership
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
-                Operators who have built and scaled across sectors.
-              </h2>
-              <p className="mt-4 text-muted-foreground">
-                The leadership team steering TESADOY DYNAMICS across procurement, development,
-                capital and operations.
-              </p>
-            </div>
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              How we work
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
+              Five stages, from first brief to after-handover.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Every mandate follows the same controlled path — whichever division leads it — so
+              you always know what happens next and what you receive at each stage.
+            </p>
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {leadership.map((person, i) => (
-              <article
-                key={person.name}
-                className="group overflow-hidden rounded-xl border border-border bg-card p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-md-soft sm:p-4"
+          <div className="mt-12 grid gap-5 lg:grid-cols-5">
+            {engagements.map(({ step, icon: Icon, title, description, output }) => (
+              <div
+                key={step}
+                className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md-soft"
               >
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg bg-muted ring-1 ring-border/50">
-                  {person.image ? (
-                    <img
-                      src={person.image}
-                      alt={`Portrait of ${person.name}`}
-                      width={1200}
-                      height={1500}
-                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
-                      loading="lazy"
-                    />
-                  ) : null}
+                <div className="flex items-center justify-between">
+                  <span className="grid h-10 w-10 place-items-center rounded-lg bg-muted text-primary">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="font-display text-2xl font-semibold text-muted-foreground/40">
+                    {step}
+                  </span>
                 </div>
-                <div className="px-1 pb-1 pt-4">
-                  <p className="font-display text-base font-semibold leading-tight">{person.name}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{person.role}</p>
-                </div>
-              </article>
+                <h3 className="mt-5 font-display text-lg font-semibold">{title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+                <p className="mt-5 border-t border-border pt-3 text-xs font-medium uppercase tracking-wider text-accent">
+                  {output}
+                </p>
+              </div>
             ))}
           </div>
         </div>
