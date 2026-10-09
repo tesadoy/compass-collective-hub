@@ -3,13 +3,14 @@ import { resolve } from "node:path";
 import sharp from "sharp";
 import { expect, it } from "vitest";
 
-it("preserves every pixel and original dimensions when compressing website portraits and the home hero", async () => {
+it("preserves every pixel and original dimensions when compressing website photos", async () => {
   const names = [
     "hero-construction.jpg",
-    "leadership-bamidele.png",
-    "leadership-christian.png",
-    "leadership-lateef.png",
-    "leadership-tesleem.png",
+    "about-hero.jpg",
+    "projects-hero.jpg",
+    "divisions-hero.jpg",
+    "div-construction.jpg",
+    "proj-mixed-use.jpg",
   ];
   for (const name of names) {
     const source = await readFile(resolve("src/assets", name));
