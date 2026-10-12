@@ -4,4 +4,4 @@ Disallow: /portal
 Disallow: /admin
 Disallow: /auth
 
-Sitemap: /sitemap.xml
+Sitemap: https://tesadoy.com/sitemap.xml
