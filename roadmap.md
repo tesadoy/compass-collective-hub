@@ -10,3 +10,6 @@
 - [x] Replace About leadership section with a "How we work" engagement model and drop the portrait files
 - [x] Reorder the eight disciplines by priority across home, divisions, footer, contact, projects and admin lists
 - [x] Review website security, patch vulnerable production dependencies, and verify public pages
+
+- [ ] Improve mobile speed and accessibility without changing appearance, content quality, or features
+- [ ] Verify core public pages, mobile layout, and build output
