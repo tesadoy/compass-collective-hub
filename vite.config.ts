@@ -27,8 +27,27 @@ export default defineConfig(({ mode }) => ({
       },
     }),
     react(),
+    {
+      // Preload the homepage hero so mobile browsers fetch it before the JS bundle runs.
+      name: "preload-home-hero",
+      apply: "build",
+      transformIndexHtml(_html, ctx) {
+        const hero = Object.values(ctx.bundle ?? {}).find((f) => f.fileName.includes("hero-construction"));
+        if (!hero) return [];
+        return [{ tag: "link", attrs: { rel: "preload", as: "image", href: (process.env.VITE_BASE_PATH ?? "/") + hero.fileName, fetchpriority: "high" }, injectTo: "head" }];
+      },
+    },
     mode === "development" && componentTagger(),
   ].filter(Boolean),
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
