@@ -122,7 +122,7 @@ const Home = () => {
           </p>
           <h1 className="animate-fade-up delay-100 mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
             Building, sourcing and capitalizing the
-            <span className="text-white/70"> infrastructure of ambitious organizations.</span>
+            <span className="text-white/80"> infrastructure of ambitious organizations.</span>
           </h1>
           <p className="animate-fade-up delay-200 mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-white/80">
             TESADOY DYNAMICS is an integrated contracting group operating across consulting,
@@ -217,7 +217,7 @@ const Home = () => {
                 <h2 className="font-display text-3xl font-semibold leading-tight sm:text-4xl">
                   Have a project in mind?
                 </h2>
-                <p className="mt-4 max-w-xl text-white/75">
+                <p className="mt-4 max-w-xl text-white/85">
                   Whether you need a single division or end-to-end delivery, our team will
                   scope, structure and execute with the rigor your project deserves.
                 </p>
