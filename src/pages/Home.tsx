@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
-import heroImage from "@/assets/hero-construction.jpg";
+import heroImage from "@/assets/hero-construction.webp";
 
 const divisions = [
   {
