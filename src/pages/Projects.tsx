@@ -12,7 +12,7 @@ import imgAgro from "@/assets/proj-agro.jpg";
 import imgEquity from "@/assets/proj-equity.jpg";
 import imgAdvisory from "@/assets/proj-advisory.jpg";
 import imgResidential from "@/assets/proj-residential.jpg";
-import projectsHero from "@/assets/projects-hero.jpg";
+import projectsHero from "@/assets/projects-hero.webp";
 
 type Project = {
   title: string;

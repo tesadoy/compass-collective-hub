@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
-import divisionsHero from "@/assets/divisions-hero.jpg";
+import divisionsHero from "@/assets/divisions-hero.webp";
 import imgProcurement from "@/assets/div-procurement.jpg";
 import imgConstruction from "@/assets/div-construction.jpg";
 import imgInteriors from "@/assets/div-interiors.jpg";

@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import Seo from "@/components/Seo";
-import contactHero from "@/assets/contact-hero.jpg";
+import contactHero from "@/assets/contact-hero.webp";
 
 const contactSchema = z.object({
   name: z

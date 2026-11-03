@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Seo from "@/components/Seo";
-import careersHero from "@/assets/careers-hero.jpg";
+import careersHero from "@/assets/careers-hero.webp";
 
 type Job = {
   id: string;
