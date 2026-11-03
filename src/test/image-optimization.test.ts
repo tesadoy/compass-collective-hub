@@ -29,3 +29,13 @@ it("keeps the converted hero pixel-identical and smaller, and leaves JPEG photos
     expect(meta.format, name).toBe("jpeg");
   }
 }, 60000);
+
+it("serves the homepage photo as a same-size WebP under 250 KB", async () => {
+  const src = await sharp(await readFile(resolve("src/assets/hero-construction.jpg"))).metadata();
+  const buf = await readFile(resolve("src/assets/hero-construction.webp"));
+  const meta = await sharp(buf).metadata();
+  expect(meta.format).toBe("webp");
+  expect(meta.width).toBe(src.width);
+  expect(meta.height).toBe(src.height);
+  expect(buf.length).toBeLessThan(250 * 1024);
+});
