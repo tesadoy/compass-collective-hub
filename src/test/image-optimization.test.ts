@@ -48,4 +48,3 @@ it("keeps the converted hero pixel-identical and smaller, and leaves JPEG photos
       expect(buf.length).toBeLessThan((await readFile(srcPath)).length);
     });
   }
-});
