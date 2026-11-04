@@ -29,12 +29,29 @@ export default defineConfig(({ mode }) => ({
     react(),
     {
       // Preload the homepage hero so mobile browsers fetch it before the JS bundle runs.
+      // Uses imagesrcset so phones preload the 768w variant and desktops the 1376w one.
       name: "preload-home-hero",
       apply: "build",
       transformIndexHtml(_html: string, ctx: IndexHtmlTransformContext) {
-        const hero = Object.values(ctx.bundle ?? {}).find((f) => f.fileName.includes("hero-construction"));
+        const heroFiles = Object.values(ctx.bundle ?? {})
+          .map((f) => f.fileName)
+          .filter((n) => n.includes("hero-construction") && n.endsWith(".webp"));
+        const mobile = heroFiles.find((n) => n.includes("-mobile"));
+        const desktop = heroFiles.find((n) => !n.includes("-mobile"));
+        const hero = desktop ?? mobile;
         if (!hero) return [];
-        return [{ tag: "link", attrs: { rel: "preload", as: "image", href: (process.env.VITE_BASE_PATH ?? "/") + hero.fileName, fetchpriority: "high" }, injectTo: "head" as const }];
+        const base = process.env.VITE_BASE_PATH ?? "/";
+        const attrs: Record<string, string> = {
+          rel: "preload",
+          as: "image",
+          href: base + hero,
+          fetchpriority: "high",
+        };
+        if (mobile && desktop) {
+          attrs.imagesrcset = `${base}${mobile} 768w, ${base}${desktop} 1376w`;
+          attrs.imagesizes = "100vw";
+        }
+        return [{ tag: "link", attrs, injectTo: "head" as const }];
       },
     } satisfies Plugin,
     mode === "development" && componentTagger(),
