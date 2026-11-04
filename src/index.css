@@ -34,8 +34,8 @@
     --muted: 195 25% 92%;
     --muted-foreground: 203 25% 35%;
 
-    /* Bright teal accent */
-    --accent: 190 55% 40%;
+    /* Bright teal accent — darkened just enough for AA contrast as small text */
+    --accent: 190 55% 33%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 75% 45%;
