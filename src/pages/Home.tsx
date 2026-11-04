@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
 import heroImage from "@/assets/hero-construction.webp";
+import heroImageMobile from "@/assets/hero-construction-mobile.webp";
 
 const divisions = [
   {
@@ -104,9 +105,11 @@ const Home = () => {
         <div className="absolute inset-0 overflow-hidden">
           <img
             src={heroImage}
+            srcSet={`${heroImageMobile} 768w, ${heroImage} 1376w`}
+            sizes="100vw"
             alt="Modern construction site in bright daylight with steel framework and logistics operations"
-            width={1920}
-            height={1080}
+            width={1376}
+            height={768}
             fetchPriority="high"
             className="h-full w-full object-cover opacity-[0.92] animate-kenburns"
           />

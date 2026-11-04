@@ -56,7 +56,7 @@ const Careers = () => {
           src={careersHero}
           alt="African professionals collaborating at a modern development in daylight"
           width={1920}
-          height={1080}
+          height={1088}
           className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/65 to-primary/10" />

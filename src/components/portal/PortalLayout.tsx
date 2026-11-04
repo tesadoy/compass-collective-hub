@@ -22,7 +22,7 @@ const PortalLayout = () => {
       <header className="border-b border-border bg-background">
         <div className="container-tight flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="TESADOY DYNAMICS" className="h-10 w-10 object-contain" />
+            <img src={logo} alt="TESADOY DYNAMICS" width={500} height={500} className="h-10 w-10 object-contain" />
             <span className="font-display text-base font-semibold">TESADOY <span className="text-muted-foreground">Portal</span></span>
           </Link>
           <div className="flex items-center gap-2">

@@ -30,6 +30,17 @@ it("keeps the converted hero pixel-identical and smaller, and leaves JPEG photos
   }
 }, 60000);
 
+  it("serves a 768w mobile homepage hero that is same-ratio and far smaller", async () => {
+    const srcPath = resolve("src/assets", "hero-construction.webp");
+    const src = await sharp(await readFile(srcPath)).metadata();
+    const buf = await readFile(resolve("src/assets", "hero-construction-mobile.webp"));
+    const meta = await sharp(buf).metadata();
+    expect(meta.format).toBe("webp");
+    expect(meta.width).toBe(768);
+    expect(Math.abs(meta.width! / meta.height! - src.width! / src.height!)).toBeLessThan(0.01);
+    expect(buf.length).toBeLessThan((await readFile(srcPath)).length);
+  });
+
   for (const [name, webpName] of [
     ["about-hero", "about-hero"],
     ["careers-hero", "careers-hero"],
