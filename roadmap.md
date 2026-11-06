@@ -7,7 +7,7 @@
 - [x] Reduce image download sizes without changing pixels or dimensions
 - [x] Reduce loading payloads while preserving existing navigation and design
 - [x] Verify public pages and static deployment compatibility
-- [ ] Generate crawlable static entry pages with route-specific metadata for public routes
+- [x] Generate crawlable static entry pages with route-specific metadata for public routes
 - [x] Replace About leadership section with a "How we work" engagement model and drop the portrait files
 - [x] Reorder the eight disciplines by priority across home, divisions, footer, contact, projects and admin lists
 - [x] Review website security, patch vulnerable production dependencies, and verify public pages
