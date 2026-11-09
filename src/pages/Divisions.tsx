@@ -21,11 +21,20 @@ import imgEquity from "@/assets/div-equity.jpg";
 import imgAgriculture from "@/assets/div-agriculture.jpg";
 import imgConsulting from "@/assets/div-consulting.jpg";
 import imgTech from "@/assets/div-tech.jpg";
+import imgProcurementMobile from "@/assets/div-procurement-mobile.webp";
+import imgConstructionMobile from "@/assets/div-construction-mobile.webp";
+import imgInteriorsMobile from "@/assets/div-interiors-mobile.webp";
+import imgLogisticsMobile from "@/assets/div-logistics-mobile.webp";
+import imgEquityMobile from "@/assets/div-equity-mobile.webp";
+import imgAgricultureMobile from "@/assets/div-agriculture-mobile.webp";
+import imgConsultingMobile from "@/assets/div-consulting-mobile.webp";
+import imgTechMobile from "@/assets/div-tech-mobile.webp";
 
 const divisions = [
   {
     id: "consulting",
     image: imgConsulting,
+    mobileImage: imgConsultingMobile,
     alt: "Consultants reviewing documents in a modern office",
     icon: Leaf,
     title: "Consulting Services",
@@ -42,6 +51,7 @@ const divisions = [
   {
     id: "procurement",
     image: imgProcurement,
+    mobileImage: imgProcurementMobile,
     alt: "Warehouse team managing procurement inventory",
     icon: Building2,
     title: "Procurement & Supply",
@@ -58,6 +68,7 @@ const divisions = [
   {
     id: "logistics",
     image: imgLogistics,
+    mobileImage: imgLogisticsMobile,
     alt: "Freight terminal with containers and cargo trucks",
     icon: Truck,
     title: "Logistics",
@@ -74,6 +85,7 @@ const divisions = [
   {
     id: "construction",
     image: imgConstruction,
+    mobileImage: imgConstructionMobile,
     alt: "Commercial construction site with tower cranes in daylight",
     icon: Hammer,
     title: "Development & Construction",
@@ -90,6 +102,7 @@ const divisions = [
   {
     id: "interiors",
     image: imgInteriors,
+    mobileImage: imgInteriorsMobile,
     alt: "Bright modern office renovation and interior fit-out",
     icon: PaintRoller,
     title: "Renovation & Interior Finishing",
@@ -106,6 +119,7 @@ const divisions = [
   {
     id: "tech",
     image: imgTech,
+    mobileImage: imgTechMobile,
     alt: "Technology team working at workstations in a bright modern office",
     icon: Cpu,
     title: "Tech & Digital Solutions",
@@ -122,6 +136,7 @@ const divisions = [
   {
     id: "equity",
     image: imgEquity,
+    mobileImage: imgEquityMobile,
     alt: "Investment team meeting in a bright boardroom",
     icon: LineChart,
     title: "Private Equity",
@@ -138,6 +153,7 @@ const divisions = [
   {
     id: "agriculture",
     image: imgAgriculture,
+    mobileImage: imgAgricultureMobile,
     alt: "Aerial view of commercial farmland and processing facility",
     icon: Sprout,
     title: "Farms & Agro-processing",
@@ -163,6 +179,8 @@ const Divisions = () => {
           alt="Aerial view of a commercial development site in daylight"
           width={1920}
           height={1080}
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/65 to-primary/20" />
@@ -196,7 +214,7 @@ const Divisions = () => {
       </section>
 
       <div className="container-tight py-20 sm:py-24 space-y-20">
-        {divisions.map(({ id, icon: Icon, title, summary, services, image, alt }, idx) => (
+        {divisions.map(({ id, icon: Icon, title, summary, services, image, mobileImage, alt }, idx) => (
           <section key={id} id={id} className="scroll-mt-24">
             <div className="grid gap-10 lg:grid-cols-12">
               <div className="lg:col-span-5">
@@ -220,10 +238,13 @@ const Divisions = () => {
                 <div className="overflow-hidden rounded-xl border border-border shadow-sm">
                   <img
                     src={image}
+                    srcSet={`${mobileImage} 768w, ${image} 1200w`}
+                    sizes="(min-width: 1024px) 650px, calc(100vw - 32px)"
                     alt={alt}
                     width={1200}
                     height={800}
                     loading="lazy"
+                    decoding="async"
                     className="h-56 w-full object-cover sm:h-72 transition-transform duration-500 hover:scale-105"
                   />
                 </div>

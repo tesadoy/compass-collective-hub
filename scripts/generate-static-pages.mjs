@@ -79,12 +79,22 @@ export const renderPage = (template, page) => {
 };
 
 export const generateStaticPages = async (outputDir) => {
-  const template = await readFile(join(outputDir, "index.html"), "utf8");
+  let template = await readFile(join(outputDir, "index.html"), "utf8");
+  const heroPreloads = new Map();
+  template = template.replace(/<link\b[^>]*\bdata-page-hero="([^"]+)"[^>]*>/gi, (tag, pagePath) => {
+    heroPreloads.set(pagePath, tag.replace(/\s+data-page-hero="[^"]*"/i, ""));
+    return "";
+  });
+
   for (const page of publicPages) {
     const outputPath = page.path === "/" ? "index.html" : join(page.path.slice(1), "index.html");
     const filePath = join(outputDir, outputPath);
     await mkdir(dirname(filePath), { recursive: true });
-    await writeFile(filePath, renderPage(template, page));
+    const preload = heroPreloads.get(page.path);
+    const pageTemplate = preload
+      ? template.replace(/<head\b[^>]*>/i, (head) => `${head}\n    ${preload}`)
+      : template;
+    await writeFile(filePath, renderPage(pageTemplate, page));
   }
 };
 

@@ -14,3 +14,4 @@
 
 - [x] Improve mobile speed and accessibility without changing appearance, content quality, or features
 - [x] Verify core public pages, mobile layout, and build output
+- [ ] Improve mobile image delivery with route-specific hero preloads and smaller gallery sources

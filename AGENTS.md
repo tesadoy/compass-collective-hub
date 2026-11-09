@@ -4,4 +4,4 @@
 - Use vite-imagetools for lossless build-time conversion of opaque PNG sources to WebP; retain original source files, dimensions, JPEGs, and transparent logos to preserve quality and static hosting compatibility.
 - Keep backend-backed routes isolated and lazy-loaded; public routes must remain usable without backend activation.
 - Use npm overrides to keep known-vulnerable transitive production packages on patched versions until upstream dependency ranges include those fixes.
-- Generate static public-route entry documents during the Vite build so static hosts serve direct URLs with route-specific metadata while the SPA remains the interactive app.
+- Generate static public-route entry documents from Vite-bundled assets with route-specific metadata and hero preloads, keeping the SPA interactive while static hosts avoid unrelated hero downloads.
