@@ -28,30 +28,44 @@ export default defineConfig(({ mode }) => ({
     }),
     react(),
     {
-      // Preload the homepage hero so mobile browsers fetch it before the JS bundle runs.
-      // Uses imagesrcset so phones preload the 768w variant and desktops the 1376w one.
-      name: "preload-home-hero",
+      // Mark each page's hero preload so the static-page generator can keep only the
+      // matching image in each entry document instead of downloading every page hero.
+      name: "preload-public-page-heroes",
       apply: "build",
       transformIndexHtml(_html: string, ctx: IndexHtmlTransformContext) {
-        const heroFiles = Object.values(ctx.bundle ?? {})
-          .map((f) => f.fileName)
-          .filter((n) => n.includes("hero-construction") && n.endsWith(".webp"));
-        const mobile = heroFiles.find((n) => n.includes("-mobile"));
-        const desktop = heroFiles.find((n) => !n.includes("-mobile"));
-        const hero = desktop ?? mobile;
-        if (!hero) return [];
+        const files = Object.values(ctx.bundle ?? {}).map((file) => file.fileName);
         const base = process.env.VITE_BASE_PATH ?? "/";
-        const attrs: Record<string, string> = {
-          rel: "preload",
-          as: "image",
-          href: base + hero,
-          fetchpriority: "high",
-        };
-        if (mobile && desktop) {
-          attrs.imagesrcset = `${base}${mobile} 768w, ${base}${desktop} 1376w`;
-          attrs.imagesizes = "100vw";
-        }
-        return [{ tag: "link", attrs, injectTo: "head" as const }];
+        const heroes = [
+          { path: "/", stem: "hero-construction", responsive: true },
+          { path: "/about", stem: "about-hero" },
+          { path: "/careers", stem: "careers-hero" },
+          { path: "/divisions", stem: "divisions-hero" },
+          { path: "/projects", stem: "projects-hero" },
+          { path: "/contact", stem: "contact-hero" },
+        ];
+
+        return heroes.flatMap(({ path, stem, responsive }) => {
+          const heroFiles = files.filter((name) => name.includes(stem) && name.endsWith(".webp"));
+          const mobile = responsive ? heroFiles.find((name) => name.includes("-mobile")) : undefined;
+          const desktop = responsive
+            ? heroFiles.find((name) => !name.includes("-mobile"))
+            : heroFiles[0];
+          const hero = desktop ?? mobile;
+          if (!hero) return [];
+
+          const attrs: Record<string, string> = {
+            rel: "preload",
+            as: "image",
+            href: base + hero,
+            fetchpriority: "high",
+            "data-page-hero": path,
+          };
+          if (mobile && desktop) {
+            attrs.imagesrcset = `${base}${mobile} 768w, ${base}${desktop} 1376w`;
+            attrs.imagesizes = "100vw";
+          }
+          return [{ tag: "link", attrs, injectTo: "head-prepend" as const }];
+        });
       },
     } satisfies Plugin,
     mode === "development" && componentTagger(),

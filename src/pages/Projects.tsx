@@ -13,6 +13,14 @@ import imgEquity from "@/assets/proj-equity.jpg";
 import imgAdvisory from "@/assets/proj-advisory.jpg";
 import imgResidential from "@/assets/proj-residential.jpg";
 import projectsHero from "@/assets/projects-hero.webp";
+import imgMixedUseMobile from "@/assets/proj-mixed-use-mobile.webp";
+import imgHqFitoutMobile from "@/assets/proj-hq-fitout-mobile.webp";
+import imgProcurementMobile from "@/assets/proj-procurement-mobile.webp";
+import imgDistributionMobile from "@/assets/proj-distribution-mobile.webp";
+import imgAgroMobile from "@/assets/proj-agro-mobile.webp";
+import imgEquityMobile from "@/assets/proj-equity-mobile.webp";
+import imgAdvisoryMobile from "@/assets/proj-advisory-mobile.webp";
+import imgResidentialMobile from "@/assets/proj-residential-mobile.webp";
 
 type Project = {
   title: string;
@@ -21,6 +29,7 @@ type Project = {
   year: string;
   description: string;
   image: string;
+  mobileImage: string;
 };
 
 
@@ -33,6 +42,7 @@ const projects: Project[] = [
     description:
       "Ground-up development of a flagship commercial complex including retail, office and parking.",
     image: imgMixedUse,
+    mobileImage: imgMixedUseMobile,
   },
   {
     title: "Corporate HQ Renovation & Fit-out",
@@ -42,6 +52,7 @@ const projects: Project[] = [
     description:
       "Turnkey renovation, design and fit-out of a multi-floor corporate headquarters with bespoke joinery.",
     image: imgHqFitout,
+    mobileImage: imgHqFitoutMobile,
   },
   {
     title: "Institutional Procurement Programme",
@@ -51,6 +62,7 @@ const projects: Project[] = [
     description:
       "Multi-category sourcing programme covering equipment, consumables and specialist services.",
     image: imgProcurement,
+    mobileImage: imgProcurementMobile,
   },
   {
     title: "Regional Distribution Network",
@@ -60,6 +72,7 @@ const projects: Project[] = [
     description:
       "Cross-border freight, customs and last-mile distribution for a manufacturing client.",
     image: imgDistribution,
+    mobileImage: imgDistributionMobile,
   },
   {
     title: "Agro-processing Facility",
@@ -69,6 +82,7 @@ const projects: Project[] = [
     description:
       "Greenfield primary processing facility with cold chain and packaging integration.",
     image: imgAgro,
+    mobileImage: imgAgroMobile,
   },
   {
     title: "Buy-and-Build Investment",
@@ -78,6 +92,7 @@ const projects: Project[] = [
     description:
       "Platform investment across a fragmented services category with operational improvements.",
     image: imgEquity,
+    mobileImage: imgEquityMobile,
   },
   {
     title: "Capital Projects Advisory",
@@ -87,6 +102,7 @@ const projects: Project[] = [
     description:
       "Independent advisory on a multi-phase infrastructure programme for a public-sector client.",
     image: imgAdvisory,
+    mobileImage: imgAdvisoryMobile,
   },
   {
     title: "Luxury Residential Development",
@@ -96,6 +112,7 @@ const projects: Project[] = [
     description:
       "Premium residential development with integrated interior design and concierge fit-out.",
     image: imgResidential,
+    mobileImage: imgResidentialMobile,
   },
 ];
 
@@ -128,6 +145,8 @@ const Projects = () => {
           alt="Project team reviewing plans at a commercial development in daylight"
           width={1920}
           height={1088}
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/65 to-primary/10" />
@@ -173,7 +192,7 @@ const Projects = () => {
                 key={p.title + i}
                 className="group flex flex-col rounded-xl border border-border bg-card overflow-hidden shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md-soft hover:border-accent/40"
               >
-                <img src={p.image} alt={p.title} loading="lazy" width={1024} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                <img src={p.image} srcSet={`${p.mobileImage} 768w, ${p.image} 1024w`} sizes="(min-width: 1024px) 350px, (min-width: 640px) 50vw, calc(100vw - 32px)" alt={p.title} loading="lazy" decoding="async" width={1024} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                 <div className="p-6 flex flex-1 flex-col">
                   <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                     {p.division}

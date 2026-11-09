@@ -111,6 +111,7 @@ const Home = () => {
             width={1376}
             height={768}
             fetchPriority="high"
+            decoding="async"
             className="h-full w-full object-cover opacity-[0.92] animate-kenburns"
           />
         </div>

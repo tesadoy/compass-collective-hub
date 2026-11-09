@@ -127,6 +127,11 @@
     scroll-behavior: smooth;
   }
 
+  #root {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1200px;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "ss01", "cv11";
